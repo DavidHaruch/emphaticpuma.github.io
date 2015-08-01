@@ -1,0 +1,11 @@
+name: emphaticpuma.github.io
+
+description: emphaticpuma's region of the internet
+
+url: http://emphaticpuma.github.io
+
+permalink: pretty
+
+markdown: rdiscount
+
+exclude: [README.md, package.json, Gruntfile.js, node_modules]
