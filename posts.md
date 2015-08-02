@@ -1,14 +1,13 @@
 ---
 layout: default
-title: emphaticpuma.github.io
+title: posts
+permalink: /posts/
 ---
-
-<p>Lorem ipsum dolor.</p>
 
 <ul>
   {% for post in site.posts %}
     <li>
-      <div>{{ post.date | date: '%B %d, %Y' }}</div>
+      <span>{{ post.date | date: '%B %d, %Y' }} ::</span> 
       <a href="{{ post.url }}">{{ post.title }}</a>
     </li>
   {% endfor %}
