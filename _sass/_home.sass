@@ -1,7 +1,8 @@
 body
 	overflow-y: scroll
 	font-family: $serif
-	font-size: 19px
+	font-size: $font-size
+	background-color: #ddd
 	@media (max-width: 1000px)
 		font-size: 16px
 
@@ -9,14 +10,41 @@ p
 	line-height: 1.45
 	color: $primary-text-color
 
+h1,h2,h3,h4,h5,h6
+	font-family: $sans
 .main
-	// min-height: 80vh
-	margin-left: 20vw
-	margin-right: 30vw
-	@media (max-width: 1600px)
-		margin-right: 20vw
-	@media (max-width: 1300px)
-		margin-right: 15vw
+	width: 72.5% - 25%
+	left: 22.5%
+	position: relative
+	margin-left: 5%
+	margin-top: 2em
+	margin-bottom: 4em
+	padding: 2em 3.5% 2em
+	background-color: #fff
+	box-shadow: 1px 5px 20px rgba(0,0,0,0.4)
+	blockquote
+		font-size: 0.9em
+		p
+			color: $secondary-text-color
+			line-height: 1.3
+	ul
+		padding-left: 0
+		list-style: inside
 
-	p:first-of-type
-		margin-top: 0
+	ol
+		padding: 0
+		counter-reset: olCounter
+		list-style-type: none
+		li::before
+			counter-increment: olCounter
+			content: counters(olCounter,".") "."
+			padding-right: 6px
+			font-family: $serif
+			font-weight: 600
+
+		li
+			ol
+				padding-left: 2em
+				margin: 0.5em 0
+				li::before
+					content: counters(olCounter,".") " "

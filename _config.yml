@@ -8,4 +8,8 @@ permalink: pretty
 
 markdown: rdiscount
 
+excerpt_separator: <!--excerpt_separator-->
+
+highlighter: pygments
+
 exclude: [README.md, package.json, Gruntfile.js, node_modules]

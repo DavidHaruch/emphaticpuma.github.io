@@ -5,21 +5,160 @@
     <description>emphaticpuma&#39;s region of the internet</description>
     <link>http://emphaticpuma.github.io/</link>
     <atom:link href="http://emphaticpuma.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 01 Aug 2015 21:14:41 -0400</pubDate>
-    <lastBuildDate>Sat, 01 Aug 2015 21:14:41 -0400</lastBuildDate>
+    <pubDate>Fri, 14 Aug 2015 19:36:25 -0400</pubDate>
+    <lastBuildDate>Fri, 14 Aug 2015 19:36:25 -0400</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
+    
+      <item>
+        <title>Using i3 window manager with Ubuntu 15.04</title>
+        <description>&lt;h2&gt;What is i3?&lt;/h2&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;a href=&quot;http://i3wm.org/&quot;&gt;i3&lt;/a&gt;&lt;/strong&gt; is something called a &lt;em&gt;tiling window manager&lt;/em&gt;. This means that it doesn&#39;t handle windows in the traditional &#39;drag-n-drop/resize&#39; method popular in Windows, OSX, and Linux desktop environments like &lt;a href=&quot;http://www.gnome.org/&quot;&gt;GNOME&lt;/a&gt;, &lt;a href=&quot;http://www.kde.org/&quot;&gt;KDE&lt;/a&gt;, &lt;a href=&quot;http://lxde.org/&quot;&gt;LXDE&lt;/a&gt;, and &lt;a href=&quot;http://www.xfce.org/&quot;&gt;Xfce&lt;/a&gt;.&lt;/p&gt;
+
+&lt;!--excerpt_separator--&gt;
+
+
+&lt;p&gt;A typical i3 experience would go something like this.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Login, be greeted by a terminal of your choice.&lt;/li&gt;
+&lt;li&gt;Open a web browser or another program using &lt;code&gt;Win+d&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;surprise! the window splits horizontally&lt;/li&gt;
+&lt;li&gt;you are left with two equally sized windows.&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;h2&gt;Installation&lt;/h2&gt;
+
+&lt;p&gt;In this guide, I will assume that you already have a desktop environment on your system. As much as I like i3, I do think that you need a &lt;em&gt;normal&lt;/em&gt; desktop environment on your computer if someone else needs to use it.&lt;/p&gt;
+
+&lt;p&gt;Using a terminal, install i3 with &lt;code&gt;sudo apt-get install i3&lt;/code&gt;, they read the prompts and enter yes. This will install i3 and the packages recommended to go alongside it.&lt;/p&gt;
+
+&lt;p&gt;After this, logout or reboot. Once you get to the login screen (pictured below), click on the gear icon. It will reveal the options for window manager/desktop environment. Select &lt;code&gt;i3&lt;/code&gt; from the list, then login.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/post_assets/2015-08-4-ubuntu-i3/gnomelogin.png&quot; alt=&quot;gnome login screen&quot; /&gt;
+&lt;em&gt;You will see i3 underneath the gnome options&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;You should be presented with a terminal&lt;/p&gt;
+</description>
+        <pubDate>Tue, 04 Aug 2015 00:00:00 -0400</pubDate>
+        <link>http://emphaticpuma.github.io/2015/08/04/i3-ubuntu-gnome/</link>
+        <guid isPermaLink="true">http://emphaticpuma.github.io/2015/08/04/i3-ubuntu-gnome/</guid>
+        
+        
+      </item>
     
       <item>
         <title>test post</title>
         <description>&lt;p&gt;This is a test&lt;/p&gt;
 
+&lt;h2&gt;h2 Lorem&lt;/h2&gt;
+
+&lt;h3&gt;h3 Ipsum?&lt;/h3&gt;
+
+&lt;h4&gt;h4 Dolor?&lt;/h4&gt;
+
+&lt;p&gt;Use the &lt;code&gt;printf&lt;/code&gt; stuff!&lt;/p&gt;
+
 &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam, commodi harum. Mollitia, amet sit! Expedita aperiam nisi officia, at eveniet praesentium facere laborum tempore assumenda quas, rerum reiciendis aspernatur quod.&lt;/p&gt;
 
-&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim esse, neque nam, repudiandae amet iure exercitationem soluta, omnis assumenda necessitatibus fugit sapiente saepe vel architecto itaque reiciendis quae facere possimus quam nisi! Perspiciatis dolores quae ut sint repudiandae quidem commodi tempora consectetur sunt tempore. Dolores autem, minima odit distinctio tempore quidem, doloribus deleniti asperiores nesciunt non quis soluta sequi veritatis nihil, voluptatibus velit iste eaque quas temporibus aliquam. Accusamus consequuntur ducimus, iste voluptas praesentium, in vitae enim quae modi, assumenda molestias obcaecati minus ipsum odit? Quo animi quas corrupti similique esse quaerat nobis asperiores accusantium quasi, iusto, deleniti. Fuga nisi aspernatur incidunt itaque earum sequi sunt vero, explicabo reiciendis blanditiis iste cumque corrupti ex consequatur reprehenderit voluptatum, dignissimos delectus obcaecati, asperiores quisquam, saepe ullam veniam nulla voluptatibus! Accusamus cupiditate illo ipsa, adipisci laboriosam dolore magnam aperiam ducimus delectus velit. Facilis ut doloribus voluptatibus similique animi assumenda aut possimus omnis cum corporis dolore recusandae laborum.&lt;/p&gt;
+&lt;p&gt;abcdefghijklmnopqrstuvwxyz&lt;/p&gt;
+
+&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facilis maiores nulla aspernatur, fugit tempore consequuntur voluptates, eum impedit optio esse.&lt;/p&gt;
+
+&lt;p&gt;abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzopqrstuvwxyz&lt;/p&gt;
+
+&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim esse, neque nam, repudiandae amet iure exercitationem soluta, omnis assumenda necessitatibus fugit sapiente saepe vel architecto itaque reiciendis quae facere possimus quam nisi! Perspiciatis dolores quae ut sint repudiandae quidem commodi.&lt;/p&gt;
+
+&lt;blockquote&gt;&lt;p&gt;Quotey quote quote... Quotey quote quote Quotey quote quote Quotey quote quote Quotey quote quote Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta suscipit dolores hic laboriosam. Tempore nulla, illo, accusamus repellendus recusandae quo!&lt;/p&gt;&lt;/blockquote&gt;
+
+&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus cupiditate vitae accusamus odio rem perspiciatis pariatur consectetur, qui laudantium et accusantium quisquam nam similique provident nobis quidem tenetur. Reprehenderit, quos.&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;headerElem&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;document&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;getElementById&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;header&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;navElem&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;document&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;getElementById&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;nav&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;headerHeight&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;headerElem&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;clientHeight&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;navHeight&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;navElem&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;clientHeight&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;mq&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;window&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;matchMedia&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;(max-width: 800px)&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;mq&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;matches&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+
+    &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;using mobile javascript&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+
+    &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;rssH&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;document&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;getElementById&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;navRss&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;clientHeight&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;navListElem&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;document&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;querySelectorAll&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;#navListElem&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+
+    &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;navListElem&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;length&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;nx&quot;&gt;navListElem&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;].&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;style&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;lineHeight&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;rssH&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;px&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+        &lt;span class=&quot;nx&quot;&gt;navListElem&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;].&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;style&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;verticalAlign&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;top&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+    &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;rssH&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;navListElem&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+
+&lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;using desktop/tablet javascript&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+
+&lt;span class=&quot;nb&quot;&gt;window&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;addEventListener&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;scroll&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(){&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;document&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;body&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;scrollTop&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;headerHeight&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;nx&quot;&gt;nav&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;style&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;position&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;fixed&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+        &lt;span class=&quot;nx&quot;&gt;nav&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;style&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;top&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;5vh&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;nx&quot;&gt;nav&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;style&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;position&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;absolute&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+        &lt;span class=&quot;nx&quot;&gt;nav&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;style&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;top&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;25vh&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
+
+
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;tempora consectetur sunt tempore. Dolores autem, minima odit distinctio tempore quidem, doloribus deleniti asperiores nesciunt non quis soluta sequi veritatis nihil, voluptatibus velit iste eaque quas temporibus aliquam. Accusamus consequuntur ducimus, iste voluptas praesentium, in vitae enim quae modi, assumenda molestias obcaecati minus ipsum odit? Quo animi quas corrupti similique esse quaerat nobis asperiores accusantium quasi, iusto, deleniti.&lt;/p&gt;
+
+&lt;h3&gt;ul&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;sadlsakdja&lt;/li&gt;
+&lt;li&gt;sadlsakdja&lt;/li&gt;
+&lt;li&gt;sadlsakdja&lt;/li&gt;
+&lt;li&gt;sadlsakdja&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;h3&gt;ol&lt;/h3&gt;
+
+&lt;ol&gt;
+&lt;li&gt;jhaskd&lt;/li&gt;
+&lt;li&gt;hsdakjhasd&lt;/li&gt;
+&lt;li&gt;sakdjhaskdjsah&lt;/li&gt;
+&lt;li&gt;lkdasd&lt;/li&gt;
+&lt;/ol&gt;
+
+
+&lt;h3&gt;Nested Lists&lt;/h3&gt;
+
+&lt;ol&gt;
+&lt;li&gt;the&lt;/li&gt;
+&lt;li&gt;quick
+
+&lt;ol&gt;
+&lt;li&gt;a&lt;/li&gt;
+&lt;li&gt;a&lt;/li&gt;
+&lt;li&gt;a&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;test&lt;/li&gt;
+&lt;li&gt;test&lt;/li&gt;
+&lt;/ol&gt;
+
+
+&lt;p&gt;Fuga nisi aspernatur incidunt itaque earum sequi sunt vero, explicabo reiciendis blanditiis iste cumque corrupti ex consequatur reprehenderit voluptatum, dignissimos delectus obcaecati, asperiores quisquam, saepe ullam veniam nulla voluptatibus! Accusamus cupiditate illo ipsa, adipisci laboriosam dolore magnam aperiam ducimus delectus velit. Facilis ut doloribus voluptatibus similique animi assumenda aut possimus omnis cum corporis dolore recusandae laborum.&lt;/p&gt;
 
 &lt;p&gt;aspernatur nostrum unde obcaecati sed modi minus ipsum repellat illo dolorem sapiente veritatis. Aspernatur doloribus odit praesentium autem ut illum repudiandae nostrum voluptas minima et. Quisquam rem ipsa molestias voluptatum, magni dolores asperiores earum, maxime, dolore eos distinctio neque beatae pariatur sunt in culpa. Veritatis beatae accusamus consequatur consequuntur hic ad, vero impedit voluptatibus illo quia. Illo fugit vero eveniet nulla, iste voluptate possimus ducimus quisquam placeat eos consectetur, maiores saepe, accusamus quas fugiat. Libero provident modi velit, hic rerum earum quos accusamus repellendus, itaque qui laborum harum vitae praesentium magni necessitatibus?&lt;/p&gt;
 
 &lt;p&gt;Est, minima inventore. Nostrum nemo nobis asperiores voluptate repellendus amet provident impedit repudiandae accusamus maxime, consectetur itaque recusandae ducimus molestiae voluptatibus perferendis inventore at neque perspiciatis quisquam. Ea placeat ratione modi eum totam, temporibus, optio nostrum molestiae aspernatur! Delectus id minima mollitia fuga! Dolorum minima est quod ea unde dicta nulla illum ducimus id.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/img/jekyll.png&quot; alt=&quot;Jekyll is Awesome!!&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui autem illum deleniti eum sequi voluptates minima facere saepe atque nisi, totam, assumenda eaque cumque molestiae maxime in officia iure? Perspiciatis distinctio, ab et possimus delectus fuga corporis eligendi, nihil. Sequi eos cupiditate expedita, earum officia vel, consequuntur. Exercitationem maxime tenetur eligendi quas a ab, deleniti cupiditate omnis optio rerum nesciunt rem, non sed suscipit dolor, aliquam, dicta eaque temporibus aut sint! Quam nulla sint, autem commodi deserunt soluta excepturi enim voluptatem, ea architecto quas? Blanditiis quis doloribus fugit consequuntur obcaecati, ea repellat quaerat officiis vero. Illo autem quas sit.&lt;/p&gt;
 
