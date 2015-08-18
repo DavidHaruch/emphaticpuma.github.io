@@ -2,6 +2,10 @@
 layout: post
 title: Using i3 window manager with Ubuntu 15.04
 date: 2015-08-04
+tags:
+  - linux
+  - ubuntu
+  - desktop
 ---
 
 ## What is i3?

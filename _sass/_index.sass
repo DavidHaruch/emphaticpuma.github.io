@@ -15,12 +15,42 @@
 		// 	margin-top: 2em
 		// 	margin-left: 10%
 
-.index-post-date
+.index-post-meta
 	color: $secondary-text-color
 	margin-bottom: 1em
+	height: 2em
+	display: block
+	.tag-list-item
+		color: #000
+		position: relative
+		top: 50%
+		transform: translateY(-50%)
+		background-color: inherit
+		color: $secondary-text-color
+		margin-right: 0
+		padding: 0 0.5em
+		.tag-icon
+			fill: lighten($secondary-text-color,20%)
+
+.index-post-date
+	line-height: 2em
+	display: inline-block
+	height: 2em
+	vertical-align: top
+	&::after
+		content: '|'
+		margin: 0 0.5em 0 1em
+
+.index-post-date-icon
+	height: 1.2em
+	width: 1.2em
+	position: relative
+	top: 0.5ex
+	margin-right: 0.25em
+	fill: $secondary-text-color
 
 .index-post-excerpt
 	margin: 1em 0
 	width: 80%
-	border-left: 1px solid $divider-color
-	padding-left: 1em
+	p
+		margin-bottom: 1.5em

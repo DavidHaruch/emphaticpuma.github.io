@@ -5,8 +5,8 @@
     <description>emphaticpuma&#39;s region of the internet</description>
     <link>http://emphaticpuma.github.io/</link>
     <atom:link href="http://emphaticpuma.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 14 Aug 2015 19:36:25 -0400</pubDate>
-    <lastBuildDate>Fri, 14 Aug 2015 19:36:25 -0400</lastBuildDate>
+    <pubDate>Sun, 16 Aug 2015 01:10:06 -0400</pubDate>
+    <lastBuildDate>Sun, 16 Aug 2015 01:10:06 -0400</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
     
       <item>
@@ -44,6 +44,12 @@
         <pubDate>Tue, 04 Aug 2015 00:00:00 -0400</pubDate>
         <link>http://emphaticpuma.github.io/2015/08/04/i3-ubuntu-gnome/</link>
         <guid isPermaLink="true">http://emphaticpuma.github.io/2015/08/04/i3-ubuntu-gnome/</guid>
+        
+        <category>linux</category>
+        
+        <category>ubuntu</category>
+        
+        <category>desktop</category>
         
         
       </item>
@@ -167,6 +173,8 @@
         <pubDate>Sat, 01 Aug 2015 00:00:00 -0400</pubDate>
         <link>http://emphaticpuma.github.io/2015/08/01/test-post/</link>
         <guid isPermaLink="true">http://emphaticpuma.github.io/2015/08/01/test-post/</guid>
+        
+        <category>test</category>
         
         
       </item>
