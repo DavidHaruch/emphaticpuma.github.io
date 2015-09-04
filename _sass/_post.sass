@@ -18,18 +18,70 @@
 		margin-top: 0.5em
 		font-size: 0.9em
 		color: $secondary-text-color
+	hr
+		border: none
+		width: 20%
+		left: 40%
+		height: 1px
+		background-color: #000
+		margin: 3em 0
+		position: relative
+	strong > em
+			text-align: center
+			display: block
+			margin: 2em 0
+			font-size: 1.1em
+
+
+.post-title
+	font-size: 6vh
+
+.post-meta
+	margin: 1em 0 2em
+
+@keyframes widthGrow
+	from
+		width: 0%
+	to
+		width: 100%
+
+@keyframes opacityIn
+	from
+		opacity: 0
+	to
+		opacity: 1
+		
+
+.post-content
+
+.post-date
+	display: inline-block
+	height: 2em
+	line-height: 2em
+	vertical-align: top
+	padding-right: 1em
+	color: $secondary-text-color
+	&::after
+		content: "|"
+		padding-left: 1em
+		font-weight: lighter
+		font-family: $mono
+		color: $secondary-text-color
+
+.tag-list
+	display: inline-block
+	margin: 0
+	height: 1.85em
+	margin-top: 0.15em
 
 .tag-list-item
 	list-style-type: none
 	display: inline-block
-	margin-right: 1em
-	background-color: #bbb
 	height: 2em
 	padding: 0.25em 1em 0.25em 0.5em
 	border-radius: 4px
 	font-size: 13px
-	// &:last-of-type
-	// 	margin-right: 0
+	color: $secondary-text-color
 
 .tag-letters
 	display: inline-block
@@ -42,4 +94,4 @@
 .tag-icon
 	height: 2em
 	width: 2em
-	fill: #000
+	fill: lighten($secondary-text-color,20%)
