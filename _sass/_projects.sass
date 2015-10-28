@@ -1,0 +1,38 @@
+.project-paragraph
+	margin-bottom: 1.5em
+	// max-width: 30ch
+	overflow-wrap: break-word
+	word-wrap: break-word
+
+.project
+	padding: 3em
+	margin-bottom: 2em
+
+	border: 1px solid #ddd
+
+	&:not(:last-of-type)
+		margin-right: 2em
+	a
+		margin-bottom: 0
+		&:nth-of-type(1)
+			margin-right: 1em
+
+	p
+		overflow-wrap: break-word
+		word-wrap: break-word
+	&:nth-of-type(3n+1)
+		p:nth-of-type(1)
+			@extend .project-paragraph
+			max-width: 30ch
+	&:nth-of-type(3n+2)
+		p:nth-of-type(1)
+			@extend .project-paragraph
+			max-width: 50ch
+	h3
+		margin: 0
+		margin-bottom: 1rem
+		word-break: break-all;
+
+.projects
+	display: flex
+	flex-wrap: wrap

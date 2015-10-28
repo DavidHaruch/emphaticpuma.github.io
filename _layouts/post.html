@@ -1,50 +1,41 @@
 ---
 layout: default
 ---
-
-<section class="post">
-	
-	{% if page.header_img %}
+<article itemscope itemtype="http://schema.org/BlogPosting">
 	
 
+<div class="meta">
+	<div class="div">		
+		<h1 itemprop="headline">{{page.title}}</h1>
+	</div>	
+	<div class="row">
+		
+	<meta itemprop="datePublished" content="{{ page.date | date: to_xml_schema }}">
+	<meta itemprop="wordCount" content="{{ page.content | number_of_words }}">
+	<meta itemprop="description" content="{{ page.excerpt | strip_html }}">
+	<meta itemprop="image" content="{{ page.metaImage }}" >
+
+	<div>Published : {{ page.date | date: '%A %B %-d, %Y'}} &mdash; {{ page.date | date: '%r %Z' }}</div>
+	{% if page.edited %}
+	<div>Edited : {{ page.edited | date: '%A %B %-d, %Y' }} &mdash; {{ page.edited | date: '%r %Z' }}</div>
 	{% endif %}
-
-	<h1 class="post-title">{{ page.title }}</h1>
-	<div class="post-meta">
-		<time class="post-date" datetime="{{ page.date | to_xml_schema }}">
-			<svg fill="#000" viewBox="0 0 24 24" class="index-post-date-icon" xmlns="http://www.w3.org/2000/svg">
-    				<path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8z" fill-opacity=".9"/>
-    				<path d="M0 0h24v24H0z" fill="none"/>
-    				<path d="M12.5 7H11v6l5.25 3.15.75-1.23-4.5-2.67z" fill-opacity=".9"/>
-				</svg>
-			{{ page.date | date: '%B %d, %Y' }}
-		</time>
-		<ul class="tag-list">
-		{% for tag in page.tags %}
-			<li class="tag-list-item">
-				<svg class="tag-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M17.63 5.84C17.27 5.33 16.67 5 16 5L5 5.01C3.9 5.01 3 5.9 3 7v10c0 1.1.9 1.99 2 1.99L16 19c.67 0 1.27-.33 1.63-.84L22 12l-4.37-6.16z"/></svg>
-				<span class="tag-letters">{{ tag }}</span>
-			</li>
-	{% endfor %}
-	</ul>
+	<div>
+		<ul>
+			<li><svg style="width:1em;height:1em;vertical-align:middle" viewBox="0 0 24 24"><path fill="#666" d="M5.5,7A1.5,1.5 0 0,1 4,5.5A1.5,1.5 0 0,1 5.5,4A1.5,1.5 0 0,1 7,5.5A1.5,1.5 0 0,1 5.5,7M21.41,11.58L12.41,2.58C12.05,2.22 11.55,2 11,2H4C2.89,2 2,2.89 2,4V11C2,11.55 2.22,12.05 2.59,12.41L11.58,21.41C11.95,21.77 12.45,22 13,22C13.55,22 14.05,21.77 14.41,21.41L21.41,14.41C21.78,14.05 22,13.55 22,13C22,12.44 21.77,11.94 21.41,11.58Z" /></svg><span>:</span></li>
+			{% for tag in page.tags %}
+				<li>
+				{{tag}}{% if forloop.index != forloop.length %},{% endif %}
+				</li>
+			{% endfor %}
+		</ul>
 		
 	</div>
-	<style>
-		.anchoricon {
-			vertical-align: top;
-			transition: all 400ms ease;
-		}
-		.anchor-icon-container {
-			display: inline-block;
-			margin-left: 0.5em;
-			opacity: 0;
-			transition: all 400ms ease;
-		}
-		.anchoricon:hover {
-			transform: rotate(180deg);
-		}
-	</style>
-	<div class="post-content">
-		{{ content }}
+		
 	</div>
+</div>
+
+<section itemprop="articleBody" class="post">	
+	{{ content }}
 </section>
+
+</article>

@@ -2,19 +2,23 @@
 <html>
 
 	{% include head.html %}
-	<a id="totop"></a>
-	<body id="body">
+	
+	<body>
+
+		<div class="container">
 
 		{% include header.html %}
 
-		<main class="main" id="main">
-	
-			{{ content }}
-
+		<main class="main">
+		
+				{{ content }}
+		
 		</main>
 
 
 		{% include footer.html %}
+		
+		</div>
 
 	</body>
 

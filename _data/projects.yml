@@ -1,3 +1,9 @@
 - name: Webflags
   link: http://github.com/emphaticpuma/webflags
   site: http://emphaticpuma.github.io/webflags/
+  desc: 'Webflags is a site that gathers all the flags of the world thanks to Wikipedia and JSON file with all countries and thier data. I made it to learn AJAX and practice javascript.'
+
+- name: emphaticpuma.github.io
+  link: http://github.com/emphaticpuma/emphaticpuma.github.io
+  site: http://emphaticpuma.github.io
+  desc: 'This is the site you are viewing right now. It is based on jekyll, a static site generator. It is freqently resdesigned and reworked. it contains content on web development, linux, javascript, math, and anthing else that comes to mind. The source code is available on Github; you are free to use any parts in your own projects.'

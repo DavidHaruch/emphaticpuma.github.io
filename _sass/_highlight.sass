@@ -6,27 +6,81 @@
 
 .highlight pre
 	margin: 0
+	padding-bottom: 3em
+	.lineno
+		color: #999
+		padding-right: .5em
+		user-select: none
+		-webkit-user-select: none 
+		-moz-user-select: none 
+		-ms-user-select: none 
+		-o-user-select: none 
+
+pre
+	white-space: pre
+	font-size: 11px
+	background: #F1F1F1
+	border: 1px solid #E1E1E1
+	border-radius: 4px
+	padding: 1em 2vw
+	@media(min-width:$tablet)
+		font-size: 14px
+
 
 .highlight
+	white-space: nowrap
 	font-size: 16px
-	padding: 1em 1em 2em 2em
+	margin: 0
+	margin-bottom: 2.5em
+	background: #F1F1F1
+	border-radius: 4px
 
 code[data-lang]::before
 	display: block
+	border-bottom: 1px solid #d1d1d1
 	font-family: $mono
-	font-weight: 700
-	text-transform: uppercase
-	font-size: 1.2em
-	color: #fff
-	margin-bottom: 2em
-	margin-top: 1em
-	text-align: left
-	padding-bottom: 1em
-	padding-left: 2.5%
-	margin-right: 2.5%
-	border-bottom: 2px solid #888
+	font-size: 1.1em
+	padding: 0.5em 0
+	margin-bottom: 1em
+	text-transform: capitalize
+	background-repeat: no-repeat
+	background-position: 100% 0%
+	background-size: auto 100%
+
+#s_bgi
+	background-size: auto 90%
+#xs_bgi
+	background-size: auto 80%
 
 code[data-lang=javascript]::before
 	content: 'javascript'
+	background-image: url("/img/lang_logo/javascript.svg")
+
+code[data-lang=python]::before
+	content: 'python'
+	background-image: url("/img/lang_logo/python.svg")
+
+code[data-lang=haskell]::before
+	content: 'haskell'
+	background-image: url("/img/lang_logo/haskell.png")
+
+code[data-lang=lua]::before
+	content: 'lua'
+	background-image: url("/img/lang_logo/lua.png")
+	@extend #s_bgi
+
+code[data-lang=java]::before
+	content: 'java'
+	background-image: url("/img/lang_logo/java.svg")
+
+code[data-lang=php]::before
+	content: 'php'
+	background-image: url("/img/lang_logo/php.svg")
+	@extend #xs_bgi
+
+code[data-lang=ruby]::before
+	content: 'ruby'
+	background-image: url("/img/lang_logo/ruby.svg")
+	@extend #xs_bgi
 
 @import '_highlight_native.scss'

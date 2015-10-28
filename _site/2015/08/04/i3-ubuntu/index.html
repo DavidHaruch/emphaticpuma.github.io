@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+
+	<meta charset="UTF-8">
+	
+		<title>emphaticpuma > Using i3 window manager with Ubuntu 15.04</title>
+	
+	
+
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="stylesheet" href="/css/styles.css">
+
+	<link href='https://fonts.googleapis.com/css?family=Noto+Serif:400italic,400,700,700italic|Open+Sans+Condensed:700' rel='stylesheet' type='text/css'>
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons&text=link"
+      rel="stylesheet">
+</head>
+
+	
+	<body>
+
+		<div class="container">
+
+		<header class="header">
+
+<div class="row">
+
+	<div class="six columns">
+		<a href="/">
+			<h1>
+				Puma
+			</h1>
+		</a>
+	</div>
+	<div class="six columns">
+		<em>emphaticpuma's region of the internet</em>
+	</div>
+</div>
+
+<div class="row">
+	<nav class="nav">
+		<ul>
+			<a href="/"><li>Home</li></a><a href="/about/"><li>About</li></a><a href="/projects/"><li>Projects</li></a><a href="/posts/"><li>Posts</li></a>
+		</ul>
+	</nav>
+</div>
+
+</header>
+
+
+		<main class="main">
+		
+				<article itemscope itemtype="http://schema.org/BlogPosting">
+	
+
+<div class="meta">
+	<div class="div">		
+		<h1 itemprop="headline">Using i3 window manager with Ubuntu 15.04</h1>
+	</div>	
+	<div class="row">
+		
+	<meta itemprop="datePublished" content="2015-08-04 18:00:00 -0400">
+	<meta itemprop="wordCount" content="461">
+	<meta itemprop="description" content="
+  What is i3?
+
+
+What is i3?
+
+i3 is something called a tiling window manager. This means that it doesn’t handle windows in the traditional ‘drag-n-drop/resize’ method popular in Windows, OSX, and Linux desktop environments like GNOME, KDE, LXDE, and Xfce.
+
+">
+	<meta itemprop="image" content="/img/i3screenshot.png" >
+
+	<div>Published : Tuesday August 4, 2015 &mdash; 06:00:00 PM EDT</div>
+	
+	<div>Edited : Tuesday October 20, 2015 &mdash; 07:00:00 PM EDT</div>
+	
+	<div>
+		<ul>
+			<li><svg style="width:1em;height:1em;vertical-align:middle" viewBox="0 0 24 24"><path fill="#666" d="M5.5,7A1.5,1.5 0 0,1 4,5.5A1.5,1.5 0 0,1 5.5,4A1.5,1.5 0 0,1 7,5.5A1.5,1.5 0 0,1 5.5,7M21.41,11.58L12.41,2.58C12.05,2.22 11.55,2 11,2H4C2.89,2 2,2.89 2,4V11C2,11.55 2.22,12.05 2.59,12.41L11.58,21.41C11.95,21.77 12.45,22 13,22C13.55,22 14.05,21.77 14.41,21.41L21.41,14.41C21.78,14.05 22,13.55 22,13C22,12.44 21.77,11.94 21.41,11.58Z" /></svg><span>:</span></li>
+			
+				<li>
+				linux,
+				</li>
+			
+				<li>
+				ubuntu,
+				</li>
+			
+				<li>
+				desktop
+				</li>
+			
+		</ul>
+		
+	</div>
+		
+	</div>
+</div>
+
+<section itemprop="articleBody" class="post">	
+	<ul id="markdown-toc">
+  <li><a href="#what-is-i3" id="markdown-toc-what-is-i3">What is i3?</a></li>
+  <li><a href="#a-brief-installation-guide" id="markdown-toc-a-brief-installation-guide">A Brief Installation Guide</a></li>
+  <li><a href="#my-opinions" id="markdown-toc-my-opinions">My Opinions</a></li>
+</ul>
+
+<h2 id="what-is-i3">What is i3?</h2>
+
+<p><strong><a href="http://i3wm.org/">i3</a></strong> is something called a <em>tiling window manager</em>. This means that it doesn’t handle windows in the traditional ‘drag-n-drop/resize’ method popular in Windows, OSX, and Linux desktop environments like <a href="http://www.gnome.org/">GNOME</a>, <a href="http://www.kde.org/">KDE</a>, <a href="http://lxde.org/">LXDE</a>, and <a href="http://www.xfce.org/">Xfce</a>.</p>
+
+<!--excerpt_separator-->
+
+<p>A typical i3 experience would go something like this.</p>
+
+<ul>
+  <li>Login, be greeted by a terminal of your choice.</li>
+  <li>Open a web browser or another program using <code>Win+d</code></li>
+  <li>surprise! the window splits horizontally</li>
+  <li>you are left with two equally sized windows.</li>
+</ul>
+
+<h2 id="a-brief-installation-guide">A Brief Installation Guide</h2>
+
+<p>In this guide, I will assume that you already have a desktop environment on your system. As much as I like i3, I do think that you need a <em>normal</em> desktop environment on your computer if someone else needs to use it.</p>
+
+<p>Using a terminal, install i3 with <code>sudo apt-get install i3</code>, they read the prompts and enter yes. This will install i3 and the packages recommended to go alongside it.</p>
+
+<p>After this, logout or reboot. Once you get to the login screen (pictured below), click on the gear icon. It will reveal the options for window manager/desktop environment. Select <code>i3</code> from the list, then login.</p>
+
+<p><img src="/img/gnomelogin.png" alt="gnome login screen" />
+<em>You will see i3 underneath the gnome options</em></p>
+
+<p>For information on usage and keyboard shortcuts, put <code>man i3</code> into your terminal or view the <a href="http://i3wm.org/docs/userguide.html">user’s guide</a> in a web browser</p>
+
+<h2 id="my-opinions">My Opinions</h2>
+
+<p>If I had to describe i3 in one word, it would be <em>utilitarian</em>. i3 really doesn’t care at all how your windows look, all that matters is maximizing usable space.</p>
+
+<p>There are plain looks, small margins and padding, and no fancy animations at all.</p>
+
+<p><img src="/img/i3screenshot.png" alt="i3 screenshot with terminal windows" /></p>
+
+<p>Gnome 3 uses system resources and screen space so you can have some <em>eye candy</em> to look at when using your computer. XFCE and LXDE, two lighter desktop environments still have menus, taskbars, and ui elements.</p>
+
+<p>I think these useful, but inefficient forms of ui are nessecary for casual computer usage or if someone else needs to use your computer (<em>an OS other than windows will already be unfamiliar to most</em>).</p>
+
+<p><strong><em>however, i3 is not for everyone, including myself.</em></strong></p>
+
+<p>For me, it fills the role of being great for productivity and multitasking. But, I definitely wouldn’t use it as the only window manager or desktop environment on a system.</p>
+
+<p>When I casually use my computer for things like browsing the web, online shopping, watching youtube, and listening to music, I don’t need all the screen “real-estate” that is available. I can deal with a few fractions of a second to see a pretty animation.</p>
+
+
+</section>
+
+</article>
+		
+		</main>
+
+
+		<footer class="footer">
+	
+</footer>
+
+<script src="/js/scripts.min.js"></script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    displayAlign: "center"
+  });
+</script>
+<script type="text/javascript"
+  src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+		
+		</div>
+
+	</body>
+
+</html>

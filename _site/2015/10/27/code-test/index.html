@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+
+	<meta charset="UTF-8">
+	
+		<title>emphaticpuma > code test</title>
+	
+	
+
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="stylesheet" href="/css/styles.css">
+
+	<link href='https://fonts.googleapis.com/css?family=Noto+Serif:400italic,400,700,700italic|Open+Sans+Condensed:700' rel='stylesheet' type='text/css'>
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons&text=link"
+      rel="stylesheet">
+</head>
+
+	
+	<body>
+
+		<div class="container">
+
+		<header class="header">
+
+<div class="row">
+
+	<div class="six columns">
+		<a href="/">
+			<h1>
+				Puma
+			</h1>
+		</a>
+	</div>
+	<div class="six columns">
+		<em>emphaticpuma's region of the internet</em>
+	</div>
+</div>
+
+<div class="row">
+	<nav class="nav">
+		<ul>
+			<a href="/"><li>Home</li></a><a href="/about/"><li>About</li></a><a href="/projects/"><li>Projects</li></a><a href="/posts/"><li>Posts</li></a>
+		</ul>
+	</nav>
+</div>
+
+</header>
+
+
+		<main class="main">
+		
+				<article itemscope itemtype="http://schema.org/BlogPosting">
+	
+
+<div class="meta">
+	<div class="div">		
+		<h1 itemprop="headline">code test</h1>
+	</div>	
+	<div class="row">
+		
+	<meta itemprop="datePublished" content="2015-10-27 13:07:30 -0400">
+	<meta itemprop="wordCount" content="1728">
+	<meta itemprop="description" content="public class HelloWorld {
+
+    public static void main(String[] args) {
+        // Prints "Hello, World" to the terminal window.
+        System.out.println("Hello, World");
+    }
+
+}
+
+
+ 1 var anchors = function (parent,elems) {
+ 2 	if (!elems)
+ 3 		elems = &quot;h1,h2,h3,h4,h5,h6&quot;;
+ 4 	if (!document.querySelector(parent)) {
+ 5 		console.log(&quot;parent elem doesn&#39;t work&quot;);
+ 6 		return false;
+ 7 	}
+ 8 
+ 9 	var pe = document.querySelectorAll(parent + &quot;&gt;&quot; + elems);
+10 	var iconsvgstr = &quot;&lt;i class=&#39;material-icons&#39;&gt;link&lt;/i&gt;&quot;;
+11 
+12 	for (i=0;i&lt;pe.length;i++) {
+13 		pe[i].id = pe[i].textContent.replace(/ /g,&quot;_&quot;);
+14 
+15 		var newelem = document.createElement(&quot;a&quot;);
+16 
+17 		newelem.innerHTML = iconsvgstr;
+18 		newelem.href = &quot;#&quot;+pe[i].textContent.replace(/ /g,&quot;_&quot;);
+19 		newelem.style.height = &quot;1em&quot;;
+20 		newelem.style.width = &quot;1em&quot;;
+21 		newelem.title = &quot;Link to this header in the page&quot;;
+22 		newelem.className = &quot;anchor-container&quot;;
+23 
+24 		pe[i].appendChild(newelem);
+25 	}
+26 };
+
+ 1 from time import localtime
+ 2 
+ 3 activities = {8: &#39;Sleeping&#39;,
+ 4               9: &#39;Commuting&#39;,
+ 5               17: &#39;Working&#39;,
+ 6               18: &#39;Commuting&#39;,
+ 7               20: &#39;Eating&#39;,
+ 8               22: &#39;Resting&#39; }
+ 9 
+10 time_now = localtime()
+11 hour = time_now.tm_hour
+12 
+13 for activity_time in sorted(activities.keys()):
+14     if hour &lt; activity_time:
+15         print activities[activity_time]
+16         break
+17 else:
+18     print &#39;Unknown, AFK or sleeping!&#39;
+
+ 1 import Control.Monad
+ 2 import Data.Attoparsec.Char8 as P hiding (skipWhile)
+ 3 import Data.Attoparsec (skipWhile)
+ 4 
+ 5 skip n = void $ P.take n
+ 6 decimal&#39; = skipSpace &gt;&gt; decimal
+ 7 double&#39;  = skipSpace &gt;&gt; double
+ 8 
+ 9 pAtom :: Parser Atom
+10 pAtom = do
+11     string &quot;ATOM  &quot;        -- Must be an &quot;ATOM  &quot; record
+12     skip 6
+13     string &quot; CA &quot;          -- Must be an alpha carbon
+14     satisfy (inClass &quot; A&quot;) -- First conformation (&#39; &#39; or &#39;A&#39;)
+15     skip 4
+16     _chainID &lt;- anyChar
+17     _resSeq &lt;- decimal&#39;
+18     skip 1
+19     x &lt;- double&#39;
+20     y &lt;- double&#39;
+21     z &lt;- double&#39;
+22     skip 26
+23     endOfLine
+24     return $ Atom {
+25         chainID = _chainID,
+26         resSeq  = _resSeq,
+27         coord   = fromList [x, y, z] }
+
+ 1 -- Get the standard deviation of a table
+ 2 function stats.standardDeviation( t )
+ 3   local m
+ 4   local vm
+ 5   local sum = 0
+ 6   local count = 0
+ 7   local result
+ 8 
+ 9   m = stats.mean( t )
+10 
+11   for k,v in pairs(t) do
+12     if type(v) == &#39;number&#39; then
+13       vm = v - m
+14       sum = sum + (vm * vm)
+15       count = count + 1
+16     end
+17   end
+18 
+19   result = math.sqrt(sum / (count-1))
+20 
+21   return result
+22 end
+23 
+24 -- Get the max and min for a table
+25 function stats.maxmin( t )
+26   local max = -math.huge
+27   local min = math.huge
+28 
+29   for k,v in pairs( t ) do
+30     if type(v) == &#39;number&#39; then
+31       max = math.max( max, v )
+32       min = math.min( min, v )
+33     end
+34   end
+35 
+36   return max, min
+37 end
+
+ 1 public class CalculateCirclePerimeterExample {
+ 2 
+ 3 public static void main(String[] args) {
+ 4        
+ 5         int radius = 0;
+ 6         System.out.println(&quot;Please enter radius of a circle&quot;);
+ 7        
+ 8         try
+ 9         {
+10                 //get the radius from console
+11                 BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+12                 radius = Integer.parseInt(br.readLine());
+13         }
+14         //if invalid value was entered
+15         catch(NumberFormatException ne)
+16         {
+17                 System.out.println(&quot;Invalid radius value&quot; + ne);
+18                 System.exit(0);
+19         }
+20         catch(IOException ioe)
+21         {
+22                 System.out.println(&quot;IO Error :&quot; + ioe);
+23                 System.exit(0);
+24         }
+25        
+26         /*
+27          * Perimeter of a circle is
+28          * 2 * pi * r
+29          * where r is a radius of a circle.
+30          */
+31        
+32         //NOTE : use Math.PI constant to get value of pi
+33         double perimeter = 2 * Math.PI * radius;
+34        
+35         System.out.println(&quot;Perimeter of a circle is &quot; + perimeter);
+36 }
+37 }
+
+ 1 &lt;?php 
+ 2 // create curl resource 
+ 3 $ch = curl_init(); 
+ 4 
+ 5 // set url 
+ 6 curl_setopt($ch, CURLOPT_URL, &quot;example.com&quot;); 
+ 7 
+ 8 //return the transfer as a string 
+ 9 curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1); 
+10 
+11 // $output contains the output string 
+12 $output = curl_exec($ch); 
+13 
+14 // close curl resource to free up system resources 
+15 curl_close($ch);      
+16 ?&gt;
+
+ 1 for i in (1..10)
+ 2     rno = rand(100) + 1
+ 3     msg = case rno
+ 4         when 42: &quot;The ultimate result.&quot;
+ 5         when 1..10: &quot;Way too small.&quot;
+ 6         when 11..15,19,27: &quot;Sorry, too small&quot;
+ 7         when 80..99: &quot;Way to large&quot;
+ 8         when 100:
+ 9                 print &quot;TOPS\n&quot;
+10                 &quot;Really way too large&quot;
+11         else &quot;Just wrong&quot;
+12     end
+13     print &quot;Result: &quot;, rno, &quot;: &quot;, msg, &quot;\n&quot;
+14 end
+
+">
+	<meta itemprop="image" content="" >
+
+	<div>Published : Tuesday October 27, 2015 &mdash; 01:07:30 PM EDT</div>
+	
+	<div>
+		<ul>
+			<li><svg style="width:1em;height:1em;vertical-align:middle" viewBox="0 0 24 24"><path fill="#666" d="M5.5,7A1.5,1.5 0 0,1 4,5.5A1.5,1.5 0 0,1 5.5,4A1.5,1.5 0 0,1 7,5.5A1.5,1.5 0 0,1 5.5,7M21.41,11.58L12.41,2.58C12.05,2.22 11.55,2 11,2H4C2.89,2 2,2.89 2,4V11C2,11.55 2.22,12.05 2.59,12.41L11.58,21.41C11.95,21.77 12.45,22 13,22C13.55,22 14.05,21.77 14.41,21.41L21.41,14.41C21.78,14.05 22,13.55 22,13C22,12.44 21.77,11.94 21.41,11.58Z" /></svg><span>:</span></li>
+			
+				<li>
+				test,
+				</li>
+			
+				<li>
+				code
+				</li>
+			
+		</ul>
+		
+	</div>
+		
+	</div>
+</div>
+
+<section itemprop="articleBody" class="post">	
+	<pre><code>public class HelloWorld {
+
+    public static void main(String[] args) {
+        // Prints "Hello, World" to the terminal window.
+        System.out.println("Hello, World");
+    }
+
+}
+</code></pre>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="lineno"> 1</span> <span class="kd">var</span> <span class="nx">anchors</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">parent</span><span class="p">,</span><span class="nx">elems</span><span class="p">)</span> <span class="p">{</span>
+<span class="lineno"> 2</span> 	<span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">elems</span><span class="p">)</span>
+<span class="lineno"> 3</span> 		<span class="nx">elems</span> <span class="o">=</span> <span class="s2">&quot;h1,h2,h3,h4,h5,h6&quot;</span><span class="p">;</span>
+<span class="lineno"> 4</span> 	<span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="nx">parent</span><span class="p">))</span> <span class="p">{</span>
+<span class="lineno"> 5</span> 		<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;parent elem doesn&#39;t work&quot;</span><span class="p">);</span>
+<span class="lineno"> 6</span> 		<span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
+<span class="lineno"> 7</span> 	<span class="p">}</span>
+<span class="lineno"> 8</span> 
+<span class="lineno"> 9</span> 	<span class="kd">var</span> <span class="nx">pe</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelectorAll</span><span class="p">(</span><span class="nx">parent</span> <span class="o">+</span> <span class="s2">&quot;&gt;&quot;</span> <span class="o">+</span> <span class="nx">elems</span><span class="p">);</span>
+<span class="lineno">10</span> 	<span class="kd">var</span> <span class="nx">iconsvgstr</span> <span class="o">=</span> <span class="s2">&quot;&lt;i class=&#39;material-icons&#39;&gt;link&lt;/i&gt;&quot;</span><span class="p">;</span>
+<span class="lineno">11</span> 
+<span class="lineno">12</span> 	<span class="k">for</span> <span class="p">(</span><span class="nx">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="nx">i</span><span class="o">&lt;</span><span class="nx">pe</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span><span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+<span class="lineno">13</span> 		<span class="nx">pe</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">id</span> <span class="o">=</span> <span class="nx">pe</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">textContent</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/ /g</span><span class="p">,</span><span class="s2">&quot;_&quot;</span><span class="p">);</span>
+<span class="lineno">14</span> 
+<span class="lineno">15</span> 		<span class="kd">var</span> <span class="nx">newelem</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s2">&quot;a&quot;</span><span class="p">);</span>
+<span class="lineno">16</span> 
+<span class="lineno">17</span> 		<span class="nx">newelem</span><span class="p">.</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="nx">iconsvgstr</span><span class="p">;</span>
+<span class="lineno">18</span> 		<span class="nx">newelem</span><span class="p">.</span><span class="nx">href</span> <span class="o">=</span> <span class="s2">&quot;#&quot;</span><span class="o">+</span><span class="nx">pe</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">textContent</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/ /g</span><span class="p">,</span><span class="s2">&quot;_&quot;</span><span class="p">);</span>
+<span class="lineno">19</span> 		<span class="nx">newelem</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">height</span> <span class="o">=</span> <span class="s2">&quot;1em&quot;</span><span class="p">;</span>
+<span class="lineno">20</span> 		<span class="nx">newelem</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">width</span> <span class="o">=</span> <span class="s2">&quot;1em&quot;</span><span class="p">;</span>
+<span class="lineno">21</span> 		<span class="nx">newelem</span><span class="p">.</span><span class="nx">title</span> <span class="o">=</span> <span class="s2">&quot;Link to this header in the page&quot;</span><span class="p">;</span>
+<span class="lineno">22</span> 		<span class="nx">newelem</span><span class="p">.</span><span class="nx">className</span> <span class="o">=</span> <span class="s2">&quot;anchor-container&quot;</span><span class="p">;</span>
+<span class="lineno">23</span> 
+<span class="lineno">24</span> 		<span class="nx">pe</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">newelem</span><span class="p">);</span>
+<span class="lineno">25</span> 	<span class="p">}</span>
+<span class="lineno">26</span> <span class="p">};</span></code></pre></figure>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="lineno"> 1</span> <span class="kn">from</span> <span class="nn">time</span> <span class="kn">import</span> <span class="n">localtime</span>
+<span class="lineno"> 2</span> 
+<span class="lineno"> 3</span> <span class="n">activities</span> <span class="o">=</span> <span class="p">{</span><span class="mi">8</span><span class="p">:</span> <span class="s">&#39;Sleeping&#39;</span><span class="p">,</span>
+<span class="lineno"> 4</span>               <span class="mi">9</span><span class="p">:</span> <span class="s">&#39;Commuting&#39;</span><span class="p">,</span>
+<span class="lineno"> 5</span>               <span class="mi">17</span><span class="p">:</span> <span class="s">&#39;Working&#39;</span><span class="p">,</span>
+<span class="lineno"> 6</span>               <span class="mi">18</span><span class="p">:</span> <span class="s">&#39;Commuting&#39;</span><span class="p">,</span>
+<span class="lineno"> 7</span>               <span class="mi">20</span><span class="p">:</span> <span class="s">&#39;Eating&#39;</span><span class="p">,</span>
+<span class="lineno"> 8</span>               <span class="mi">22</span><span class="p">:</span> <span class="s">&#39;Resting&#39;</span> <span class="p">}</span>
+<span class="lineno"> 9</span> 
+<span class="lineno">10</span> <span class="n">time_now</span> <span class="o">=</span> <span class="n">localtime</span><span class="p">()</span>
+<span class="lineno">11</span> <span class="n">hour</span> <span class="o">=</span> <span class="n">time_now</span><span class="o">.</span><span class="n">tm_hour</span>
+<span class="lineno">12</span> 
+<span class="lineno">13</span> <span class="k">for</span> <span class="n">activity_time</span> <span class="ow">in</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">activities</span><span class="o">.</span><span class="n">keys</span><span class="p">()):</span>
+<span class="lineno">14</span>     <span class="k">if</span> <span class="n">hour</span> <span class="o">&lt;</span> <span class="n">activity_time</span><span class="p">:</span>
+<span class="lineno">15</span>         <span class="k">print</span> <span class="n">activities</span><span class="p">[</span><span class="n">activity_time</span><span class="p">]</span>
+<span class="lineno">16</span>         <span class="k">break</span>
+<span class="lineno">17</span> <span class="k">else</span><span class="p">:</span>
+<span class="lineno">18</span>     <span class="k">print</span> <span class="s">&#39;Unknown, AFK or sleeping!&#39;</span></code></pre></figure>
+
+<figure class="highlight"><pre><code class="language-haskell" data-lang="haskell"><span class="lineno"> 1</span> <span class="kr">import</span> <span class="nn">Control.Monad</span>
+<span class="lineno"> 2</span> <span class="kr">import</span> <span class="nn">Data.Attoparsec.Char8</span> <span class="k">as</span> <span class="n">P</span> <span class="n">hiding</span> <span class="p">(</span><span class="n">skipWhile</span><span class="p">)</span>
+<span class="lineno"> 3</span> <span class="kr">import</span> <span class="nn">Data.Attoparsec</span> <span class="p">(</span><span class="nf">skipWhile</span><span class="p">)</span>
+<span class="lineno"> 4</span> 
+<span class="lineno"> 5</span> <span class="nf">skip</span> <span class="n">n</span> <span class="ow">=</span> <span class="n">void</span> <span class="o">$</span> <span class="kt">P</span><span class="o">.</span><span class="n">take</span> <span class="n">n</span>
+<span class="lineno"> 6</span> <span class="nf">decimal&#39;</span> <span class="ow">=</span> <span class="n">skipSpace</span> <span class="o">&gt;&gt;</span> <span class="n">decimal</span>
+<span class="lineno"> 7</span> <span class="nf">double&#39;</span>  <span class="ow">=</span> <span class="n">skipSpace</span> <span class="o">&gt;&gt;</span> <span class="n">double</span>
+<span class="lineno"> 8</span> 
+<span class="lineno"> 9</span> <span class="nf">pAtom</span> <span class="ow">::</span> <span class="kt">Parser</span> <span class="kt">Atom</span>
+<span class="lineno">10</span> <span class="nf">pAtom</span> <span class="ow">=</span> <span class="kr">do</span>
+<span class="lineno">11</span>     <span class="n">string</span> <span class="s">&quot;ATOM  &quot;</span>        <span class="c1">-- Must be an &quot;ATOM  &quot; record</span>
+<span class="lineno">12</span>     <span class="n">skip</span> <span class="mi">6</span>
+<span class="lineno">13</span>     <span class="n">string</span> <span class="s">&quot; CA &quot;</span>          <span class="c1">-- Must be an alpha carbon</span>
+<span class="lineno">14</span>     <span class="n">satisfy</span> <span class="p">(</span><span class="n">inClass</span> <span class="s">&quot; A&quot;</span><span class="p">)</span> <span class="c1">-- First conformation (&#39; &#39; or &#39;A&#39;)</span>
+<span class="lineno">15</span>     <span class="n">skip</span> <span class="mi">4</span>
+<span class="lineno">16</span>     <span class="n">_chainID</span> <span class="ow">&lt;-</span> <span class="n">anyChar</span>
+<span class="lineno">17</span>     <span class="n">_resSeq</span> <span class="ow">&lt;-</span> <span class="n">decimal&#39;</span>
+<span class="lineno">18</span>     <span class="n">skip</span> <span class="mi">1</span>
+<span class="lineno">19</span>     <span class="n">x</span> <span class="ow">&lt;-</span> <span class="n">double&#39;</span>
+<span class="lineno">20</span>     <span class="n">y</span> <span class="ow">&lt;-</span> <span class="n">double&#39;</span>
+<span class="lineno">21</span>     <span class="n">z</span> <span class="ow">&lt;-</span> <span class="n">double&#39;</span>
+<span class="lineno">22</span>     <span class="n">skip</span> <span class="mi">26</span>
+<span class="lineno">23</span>     <span class="n">endOfLine</span>
+<span class="lineno">24</span>     <span class="n">return</span> <span class="o">$</span> <span class="kt">Atom</span> <span class="p">{</span>
+<span class="lineno">25</span>         <span class="n">chainID</span> <span class="ow">=</span> <span class="n">_chainID</span><span class="p">,</span>
+<span class="lineno">26</span>         <span class="n">resSeq</span>  <span class="ow">=</span> <span class="n">_resSeq</span><span class="p">,</span>
+<span class="lineno">27</span>         <span class="n">coord</span>   <span class="ow">=</span> <span class="n">fromList</span> <span class="p">[</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">]</span> <span class="p">}</span></code></pre></figure>
+
+<figure class="highlight"><pre><code class="language-lua" data-lang="lua"><span class="lineno"> 1</span> <span class="c1">-- Get the standard deviation of a table</span>
+<span class="lineno"> 2</span> <span class="k">function</span> <span class="nc">stats</span><span class="p">.</span><span class="nf">standardDeviation</span><span class="p">(</span> <span class="n">t</span> <span class="p">)</span>
+<span class="lineno"> 3</span>   <span class="kd">local</span> <span class="n">m</span>
+<span class="lineno"> 4</span>   <span class="kd">local</span> <span class="n">vm</span>
+<span class="lineno"> 5</span>   <span class="kd">local</span> <span class="n">sum</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="lineno"> 6</span>   <span class="kd">local</span> <span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="lineno"> 7</span>   <span class="kd">local</span> <span class="n">result</span>
+<span class="lineno"> 8</span> 
+<span class="lineno"> 9</span>   <span class="n">m</span> <span class="o">=</span> <span class="n">stats</span><span class="p">.</span><span class="n">mean</span><span class="p">(</span> <span class="n">t</span> <span class="p">)</span>
+<span class="lineno">10</span> 
+<span class="lineno">11</span>   <span class="k">for</span> <span class="n">k</span><span class="p">,</span><span class="n">v</span> <span class="k">in</span> <span class="nb">pairs</span><span class="p">(</span><span class="n">t</span><span class="p">)</span> <span class="k">do</span>
+<span class="lineno">12</span>     <span class="k">if</span> <span class="nb">type</span><span class="p">(</span><span class="n">v</span><span class="p">)</span> <span class="o">==</span> <span class="s1">&#39;</span><span class="s">number&#39;</span> <span class="k">then</span>
+<span class="lineno">13</span>       <span class="n">vm</span> <span class="o">=</span> <span class="n">v</span> <span class="o">-</span> <span class="n">m</span>
+<span class="lineno">14</span>       <span class="n">sum</span> <span class="o">=</span> <span class="n">sum</span> <span class="o">+</span> <span class="p">(</span><span class="n">vm</span> <span class="o">*</span> <span class="n">vm</span><span class="p">)</span>
+<span class="lineno">15</span>       <span class="n">count</span> <span class="o">=</span> <span class="n">count</span> <span class="o">+</span> <span class="mi">1</span>
+<span class="lineno">16</span>     <span class="k">end</span>
+<span class="lineno">17</span>   <span class="k">end</span>
+<span class="lineno">18</span> 
+<span class="lineno">19</span>   <span class="n">result</span> <span class="o">=</span> <span class="nb">math.sqrt</span><span class="p">(</span><span class="n">sum</span> <span class="o">/</span> <span class="p">(</span><span class="n">count</span><span class="o">-</span><span class="mi">1</span><span class="p">))</span>
+<span class="lineno">20</span> 
+<span class="lineno">21</span>   <span class="k">return</span> <span class="n">result</span>
+<span class="lineno">22</span> <span class="k">end</span>
+<span class="lineno">23</span> 
+<span class="lineno">24</span> <span class="c1">-- Get the max and min for a table</span>
+<span class="lineno">25</span> <span class="k">function</span> <span class="nc">stats</span><span class="p">.</span><span class="nf">maxmin</span><span class="p">(</span> <span class="n">t</span> <span class="p">)</span>
+<span class="lineno">26</span>   <span class="kd">local</span> <span class="n">max</span> <span class="o">=</span> <span class="o">-</span><span class="nb">math.huge</span>
+<span class="lineno">27</span>   <span class="kd">local</span> <span class="n">min</span> <span class="o">=</span> <span class="nb">math.huge</span>
+<span class="lineno">28</span> 
+<span class="lineno">29</span>   <span class="k">for</span> <span class="n">k</span><span class="p">,</span><span class="n">v</span> <span class="k">in</span> <span class="nb">pairs</span><span class="p">(</span> <span class="n">t</span> <span class="p">)</span> <span class="k">do</span>
+<span class="lineno">30</span>     <span class="k">if</span> <span class="nb">type</span><span class="p">(</span><span class="n">v</span><span class="p">)</span> <span class="o">==</span> <span class="s1">&#39;</span><span class="s">number&#39;</span> <span class="k">then</span>
+<span class="lineno">31</span>       <span class="n">max</span> <span class="o">=</span> <span class="nb">math.max</span><span class="p">(</span> <span class="n">max</span><span class="p">,</span> <span class="n">v</span> <span class="p">)</span>
+<span class="lineno">32</span>       <span class="n">min</span> <span class="o">=</span> <span class="nb">math.min</span><span class="p">(</span> <span class="n">min</span><span class="p">,</span> <span class="n">v</span> <span class="p">)</span>
+<span class="lineno">33</span>     <span class="k">end</span>
+<span class="lineno">34</span>   <span class="k">end</span>
+<span class="lineno">35</span> 
+<span class="lineno">36</span>   <span class="k">return</span> <span class="n">max</span><span class="p">,</span> <span class="n">min</span>
+<span class="lineno">37</span> <span class="k">end</span></code></pre></figure>
+
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="lineno"> 1</span> <span class="kd">public</span> <span class="kd">class</span> <span class="nc">CalculateCirclePerimeterExample</span> <span class="o">{</span>
+<span class="lineno"> 2</span> 
+<span class="lineno"> 3</span> <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+<span class="lineno"> 4</span>        
+<span class="lineno"> 5</span>         <span class="kt">int</span> <span class="n">radius</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
+<span class="lineno"> 6</span>         <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;Please enter radius of a circle&quot;</span><span class="o">);</span>
+<span class="lineno"> 7</span>        
+<span class="lineno"> 8</span>         <span class="k">try</span>
+<span class="lineno"> 9</span>         <span class="o">{</span>
+<span class="lineno">10</span>                 <span class="c1">//get the radius from console</span>
+<span class="lineno">11</span>                 <span class="n">BufferedReader</span> <span class="n">br</span> <span class="o">=</span> <span class="k">new</span> <span class="nf">BufferedReader</span><span class="o">(</span><span class="k">new</span> <span class="nf">InputStreamReader</span><span class="o">(</span><span class="n">System</span><span class="o">.</span><span class="na">in</span><span class="o">));</span>
+<span class="lineno">12</span>                 <span class="n">radius</span> <span class="o">=</span> <span class="n">Integer</span><span class="o">.</span><span class="na">parseInt</span><span class="o">(</span><span class="n">br</span><span class="o">.</span><span class="na">readLine</span><span class="o">());</span>
+<span class="lineno">13</span>         <span class="o">}</span>
+<span class="lineno">14</span>         <span class="c1">//if invalid value was entered</span>
+<span class="lineno">15</span>         <span class="k">catch</span><span class="o">(</span><span class="n">NumberFormatException</span> <span class="n">ne</span><span class="o">)</span>
+<span class="lineno">16</span>         <span class="o">{</span>
+<span class="lineno">17</span>                 <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;Invalid radius value&quot;</span> <span class="o">+</span> <span class="n">ne</span><span class="o">);</span>
+<span class="lineno">18</span>                 <span class="n">System</span><span class="o">.</span><span class="na">exit</span><span class="o">(</span><span class="mi">0</span><span class="o">);</span>
+<span class="lineno">19</span>         <span class="o">}</span>
+<span class="lineno">20</span>         <span class="k">catch</span><span class="o">(</span><span class="n">IOException</span> <span class="n">ioe</span><span class="o">)</span>
+<span class="lineno">21</span>         <span class="o">{</span>
+<span class="lineno">22</span>                 <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;IO Error :&quot;</span> <span class="o">+</span> <span class="n">ioe</span><span class="o">);</span>
+<span class="lineno">23</span>                 <span class="n">System</span><span class="o">.</span><span class="na">exit</span><span class="o">(</span><span class="mi">0</span><span class="o">);</span>
+<span class="lineno">24</span>         <span class="o">}</span>
+<span class="lineno">25</span>        
+<span class="lineno">26</span>         <span class="cm">/*</span>
+<span class="lineno">27</span> <span class="cm">         * Perimeter of a circle is</span>
+<span class="lineno">28</span> <span class="cm">         * 2 * pi * r</span>
+<span class="lineno">29</span> <span class="cm">         * where r is a radius of a circle.</span>
+<span class="lineno">30</span> <span class="cm">         */</span>
+<span class="lineno">31</span>        
+<span class="lineno">32</span>         <span class="c1">//NOTE : use Math.PI constant to get value of pi</span>
+<span class="lineno">33</span>         <span class="kt">double</span> <span class="n">perimeter</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">Math</span><span class="o">.</span><span class="na">PI</span> <span class="o">*</span> <span class="n">radius</span><span class="o">;</span>
+<span class="lineno">34</span>        
+<span class="lineno">35</span>         <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;Perimeter of a circle is &quot;</span> <span class="o">+</span> <span class="n">perimeter</span><span class="o">);</span>
+<span class="lineno">36</span> <span class="o">}</span>
+<span class="lineno">37</span> <span class="o">}</span></code></pre></figure>
+
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="lineno"> 1</span> <span class="cp">&lt;?php</span> 
+<span class="lineno"> 2</span> <span class="c1">// create curl resource </span>
+<span class="lineno"> 3</span> <span class="nv">$ch</span> <span class="o">=</span> <span class="nb">curl_init</span><span class="p">();</span> 
+<span class="lineno"> 4</span> 
+<span class="lineno"> 5</span> <span class="c1">// set url </span>
+<span class="lineno"> 6</span> <span class="nb">curl_setopt</span><span class="p">(</span><span class="nv">$ch</span><span class="p">,</span> <span class="nx">CURLOPT_URL</span><span class="p">,</span> <span class="s2">&quot;example.com&quot;</span><span class="p">);</span> 
+<span class="lineno"> 7</span> 
+<span class="lineno"> 8</span> <span class="c1">//return the transfer as a string </span>
+<span class="lineno"> 9</span> <span class="nb">curl_setopt</span><span class="p">(</span><span class="nv">$ch</span><span class="p">,</span> <span class="nx">CURLOPT_RETURNTRANSFER</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span> 
+<span class="lineno">10</span> 
+<span class="lineno">11</span> <span class="c1">// $output contains the output string </span>
+<span class="lineno">12</span> <span class="nv">$output</span> <span class="o">=</span> <span class="nb">curl_exec</span><span class="p">(</span><span class="nv">$ch</span><span class="p">);</span> 
+<span class="lineno">13</span> 
+<span class="lineno">14</span> <span class="c1">// close curl resource to free up system resources </span>
+<span class="lineno">15</span> <span class="nb">curl_close</span><span class="p">(</span><span class="nv">$ch</span><span class="p">);</span>      
+<span class="lineno">16</span> <span class="cp">?&gt;</span><span class="x"></span></code></pre></figure>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="lineno"> 1</span> <span class="k">for</span> <span class="n">i</span> <span class="k">in</span> <span class="p">(</span><span class="mi">1</span><span class="o">.</span><span class="n">.</span><span class="mi">10</span><span class="p">)</span>
+<span class="lineno"> 2</span>     <span class="n">rno</span> <span class="o">=</span> <span class="nb">rand</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span>
+<span class="lineno"> 3</span>     <span class="n">msg</span> <span class="o">=</span> <span class="k">case</span> <span class="n">rno</span>
+<span class="lineno"> 4</span>         <span class="k">when</span> <span class="mi">42</span><span class="p">:</span> <span class="s2">&quot;The ultimate result.&quot;</span>
+<span class="lineno"> 5</span>         <span class="k">when</span> <span class="mi">1</span><span class="o">.</span><span class="n">.</span><span class="mi">10</span><span class="p">:</span> <span class="s2">&quot;Way too small.&quot;</span>
+<span class="lineno"> 6</span>         <span class="k">when</span> <span class="mi">11</span><span class="o">.</span><span class="n">.</span><span class="mi">15</span><span class="p">,</span><span class="mi">19</span><span class="p">,</span><span class="mi">27</span><span class="p">:</span> <span class="s2">&quot;Sorry, too small&quot;</span>
+<span class="lineno"> 7</span>         <span class="k">when</span> <span class="mi">80</span><span class="o">.</span><span class="n">.</span><span class="mi">99</span><span class="p">:</span> <span class="s2">&quot;Way to large&quot;</span>
+<span class="lineno"> 8</span>         <span class="k">when</span> <span class="mi">100</span><span class="p">:</span>
+<span class="lineno"> 9</span>                 <span class="nb">print</span> <span class="s2">&quot;TOPS</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="lineno">10</span>                 <span class="s2">&quot;Really way too large&quot;</span>
+<span class="lineno">11</span>         <span class="k">else</span> <span class="s2">&quot;Just wrong&quot;</span>
+<span class="lineno">12</span>     <span class="k">end</span>
+<span class="lineno">13</span>     <span class="nb">print</span> <span class="s2">&quot;Result: &quot;</span><span class="p">,</span> <span class="n">rno</span><span class="p">,</span> <span class="s2">&quot;: &quot;</span><span class="p">,</span> <span class="n">msg</span><span class="p">,</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="lineno">14</span> <span class="k">end</span></code></pre></figure>
+
+
+</section>
+
+</article>
+		
+		</main>
+
+
+		<footer class="footer">
+	
+</footer>
+
+<script src="/js/scripts.min.js"></script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    displayAlign: "center"
+  });
+</script>
+<script type="text/javascript"
+  src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+		
+		</div>
+
+	</body>
+
+</html>

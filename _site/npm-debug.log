@@ -1,0 +1,26 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/bin/node', '/usr/bin/npm', 'uninstall', 'grunt-bower' ]
+2 info using npm@1.4.28
+3 info using node@v0.10.38
+4 verbose node symlink /usr/bin/node
+5 verbose node_modules/grunt-bower unbuild
+6 info preuninstall grunt-bower@0.20.0
+7 info uninstall grunt-bower@0.20.0
+8 verbose true,/home/david/WebDev/emphaticpuma.github.io/node_modules,/home/david/WebDev/emphaticpuma.github.io/node_modules unbuild grunt-bower@0.20.0
+9 info postuninstall grunt-bower@0.20.0
+10 error Error: EACCES, unlink '/home/david/WebDev/emphaticpuma.github.io/node_modules/grunt-bower/node_modules/.bin/bower'
+10 error  { [Error: EACCES, unlink '/home/david/WebDev/emphaticpuma.github.io/node_modules/grunt-bower/node_modules/.bin/bower']
+10 error   errno: 3,
+10 error   code: 'EACCES',
+10 error   path: '/home/david/WebDev/emphaticpuma.github.io/node_modules/grunt-bower/node_modules/.bin/bower' }
+11 error Please try running this command again as root/Administrator.
+12 error System Linux 3.19.0-21-generic
+13 error command "/usr/bin/node" "/usr/bin/npm" "uninstall" "grunt-bower"
+14 error cwd /home/david/WebDev/emphaticpuma.github.io
+15 error node -v v0.10.38
+16 error npm -v 1.4.28
+17 error path /home/david/WebDev/emphaticpuma.github.io/node_modules/grunt-bower/node_modules/.bin/bower
+18 error code EACCES
+19 error errno 3
+20 error stack Error: EACCES, unlink '/home/david/WebDev/emphaticpuma.github.io/node_modules/grunt-bower/node_modules/.bin/bower'
+21 verbose exit [ 3, true ]

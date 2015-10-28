@@ -1,15 +1,18 @@
 name: emphaticpuma.github.io
 
-description: emphaticpuma's region of the internet
+desc: emphaticpuma's region of the internet
 
 url: http://emphaticpuma.github.io
 
 permalink: pretty
 
-markdown: rdiscount
+markdown: kramdown
+
+kramdown:
+    smart_quotes: ['lsquo','rsquo','ldquo','rdquo']
 
 excerpt_separator: <!--excerpt_separator-->
 
 highlighter: pygments
 
-exclude: [README.md, package.json, Gruntfile.js, node_modules]
+exclude: ['README.md', 'package.json', 'Gruntfile.js', 'node_modules', 'bower_components/']

@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+
+	<meta charset="UTF-8">
+	
+		<title>emphaticpuma > Implicit Derivatives</title>
+	
+	
+
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="stylesheet" href="/css/styles.css">
+
+	<link href='https://fonts.googleapis.com/css?family=Noto+Serif:400italic,400,700,700italic|Open+Sans+Condensed:700' rel='stylesheet' type='text/css'>
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons&text=link"
+      rel="stylesheet">
+</head>
+
+	
+	<body>
+
+		<div class="container">
+
+		<header class="header">
+
+<div class="row">
+
+	<div class="six columns">
+		<a href="/">
+			<h1>
+				Puma
+			</h1>
+		</a>
+	</div>
+	<div class="six columns">
+		<em>emphaticpuma's region of the internet</em>
+	</div>
+</div>
+
+<div class="row">
+	<nav class="nav">
+		<ul>
+			<a href="/"><li>Home</li></a><a href="/about/"><li>About</li></a><a href="/projects/"><li>Projects</li></a><a href="/posts/"><li>Posts</li></a>
+		</ul>
+	</nav>
+</div>
+
+</header>
+
+
+		<main class="main">
+		
+				<article itemscope itemtype="http://schema.org/BlogPosting">
+	
+
+<div class="meta">
+	<div class="div">		
+		<h1 itemprop="headline">Implicit Derivatives</h1>
+	</div>	
+	<div class="row">
+		
+	<meta itemprop="datePublished" content="2015-10-07 00:00:00 -0400">
+	<meta itemprop="wordCount" content="268">
+	<meta itemprop="description" content="take the equation
+
+
+Even though we can solve this for , we’ll assume that we can’t so we can showcase implicit derivatives.
+
+An implicitly defined function is a function that takes the form , this example is the unit circle function.
+
+To take derivatives of these functions, we need to treat  as a function of .
+
+With  being a function of , we can use the chain rule to take the derivative of it, then treat  or  as an algebraic variable.
+
+The best way to learn this is to do problems, so let’s do one.
+
+
+  Take the derivative of the function and find the equation of the tangent line at 
+
+
+
+
+
+  constant rule, so 
+  power rule, so 
+  now comes the hard part. The variables disagree, we have to use the chain rule
+
+
+
+
+when using the chain rule, we get
+
+
+
+Now, let’s put it all together and do some algebra
+
+
+
+Subtract  from both sides
+
+
+
+Divide by 
+
+
+
+Simplify, and done
+
+
+
+Now to find the tangent line at 
+
+
+">
+	<meta itemprop="image" content="" >
+
+	<div>Published : Wednesday October 7, 2015 &mdash; 12:00:00 AM EDT</div>
+	
+	<div>
+		<ul>
+			<li><svg style="width:1em;height:1em;vertical-align:middle" viewBox="0 0 24 24"><path fill="#666" d="M5.5,7A1.5,1.5 0 0,1 4,5.5A1.5,1.5 0 0,1 5.5,4A1.5,1.5 0 0,1 7,5.5A1.5,1.5 0 0,1 5.5,7M21.41,11.58L12.41,2.58C12.05,2.22 11.55,2 11,2H4C2.89,2 2,2.89 2,4V11C2,11.55 2.22,12.05 2.59,12.41L11.58,21.41C11.95,21.77 12.45,22 13,22C13.55,22 14.05,21.77 14.41,21.41L21.41,14.41C21.78,14.05 22,13.55 22,13C22,12.44 21.77,11.94 21.41,11.58Z" /></svg><span>:</span></li>
+			
+				<li>
+				test,
+				</li>
+			
+				<li>
+				math
+				</li>
+			
+		</ul>
+		
+	</div>
+		
+	</div>
+</div>
+
+<section itemprop="articleBody" class="post">	
+	<p>take the equation
+<script type="math/tex">4 = x^2 + y^2</script></p>
+
+<p>Even though we can solve this for <script type="math/tex">y</script>, we’ll assume that we can’t so we can showcase implicit derivatives.</p>
+
+<p>An <strong>implicitly defined function</strong> is a function that takes the form <script type="math/tex">x^2 + y^2 = 1</script>, this example is the unit circle function.</p>
+
+<p>To take derivatives of these functions, we need to treat <script type="math/tex">y</script> as a function of <script type="math/tex">x</script>.</p>
+
+<p>With <script type="math/tex">y</script> being a function of <script type="math/tex">x</script>, we can use the <strong>chain rule</strong> to take the derivative of it, then treat <script type="math/tex">\frac{dy}{dx}</script> or <script type="math/tex">f'</script> as an algebraic variable.</p>
+
+<p>The best way to learn this is to do problems, so let’s do one.</p>
+
+<ol>
+  <li><em>Take the derivative of the function and find the equation of the tangent line at <script type="math/tex">(1,-4)</script></em></li>
+</ol>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{align*} 
+
+4 &= x^2 + y^2 \\
+\frac{d}{dx}4 &= \frac{d}{dx}x^2 + \frac{d}{dx}y^2
+
+\end{align*} %]]></script>
+
+<ol>
+  <li>constant rule, so <script type="math/tex">\frac{d}{dx}4 = 0</script></li>
+  <li>power rule, so <script type="math/tex">\frac{d}{dx}x^2  = {2x^1}</script></li>
+  <li>now comes the hard part. The variables disagree, we have to use the chain rule</li>
+</ol>
+
+<script type="math/tex; mode=display">\frac{d}{d \color{red}{x}}\color{red}{y}^2</script>
+
+<p>when using the chain rule, we get</p>
+
+<script type="math/tex; mode=display">2(y)\cdot \frac{dy}{dx}</script>
+
+<p>Now, let’s put it all together and do some algebra</p>
+
+<script type="math/tex; mode=display">0 = 2x + 2y\frac{dy}{dx}</script>
+
+<p>Subtract <script type="math/tex">2x</script> from both sides</p>
+
+<script type="math/tex; mode=display">2y\frac{dy}{dx} = -2x</script>
+
+<p>Divide by <script type="math/tex">2y</script></p>
+
+<script type="math/tex; mode=display">\frac{dy}{dx} = \frac{-2x}{2y}</script>
+
+<p>Simplify, and done</p>
+
+<script type="math/tex; mode=display">\frac{dy}{dx} = \frac{-x}{y}</script>
+
+<p>Now to find the tangent line at <script type="math/tex">(1,-4)</script></p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{align*} 
+y+4&=\frac{1}{4}(x+1) \\
+y &= \frac{1}{4}x - \frac{3}{4}
+\end{align*} %]]></script>
+
+</section>
+
+</article>
+		
+		</main>
+
+
+		<footer class="footer">
+	
+</footer>
+
+<script src="/js/scripts.min.js"></script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    displayAlign: "center"
+  });
+</script>
+<script type="text/javascript"
+  src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+		
+		</div>
+
+	</body>
+
+</html>

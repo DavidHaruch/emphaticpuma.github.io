@@ -1,21 +1,29 @@
 ---
 layout: default
 title: projects
-permalink: /projects/
 ---
 
-<h1>Projects</h1>
+## Projects
 
-<ul>	
+<div class="projects">
+
 {% for project in site.data.projects %}
-	<li>
-		<a href="{{project.link}}">
-			{{project.name}}
-		</a>
-		<br>
-		{% if project.site %}
-			<a href="{{project.site}}">Website</a>
-		{% endif %}
-	</li>
+
+<div class="project">
+
+	<h3>{{ project.name }}</h3>
+
+	{% if project.desc %}
+
+	<p>{{project.desc}}</p>
+
+	{% endif %}
+
+	<a href="{{ project.link }}" class="button button-primary">Link</a>
+	<a href="{{ project.site }}" class="button">site</a>
+</div>
+
+
 {% endfor %}
-</ul>
+
+</div>

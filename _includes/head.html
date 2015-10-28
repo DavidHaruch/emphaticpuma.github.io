@@ -1,10 +1,19 @@
 <head>
+
 	<meta charset="UTF-8">
-	<title>{{ site.name }}</title>
+	{% if page.title != 'emphaticpuma.github.io' %}
+		<title>{{ page.title | prepend: "emphaticpuma > "}}</title>
+	{% endif %}
+	{% if page.title == 'emphaticpuma.github.io' %}
+		<title>emphaticpuma</title>
+	{% endif %}
+
 	<meta name="description" content="{{ site.description }}">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
 	<link rel="stylesheet" href="/css/styles.css">
 
-	<link href='http://fonts.googleapis.com/css?family=Merriweather:400,400italic|Fira+Mono:400,700|Noto+Sans:400,700' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Noto+Serif:400italic,400,700,700italic|Open+Sans+Condensed:700' rel='stylesheet' type='text/css'>
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons&text=link"
+      rel="stylesheet">
 </head>

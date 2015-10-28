@@ -25,6 +25,12 @@ module.exports = function(grunt) {
 				command: 'jekyll build'
 			}
 		},
+		bower_concat: {
+			build: {
+				dest: '_js/bower.js',
+				cssDest: '_sass/_bower.scss'
+			}
+		},
 		watch: {
 			options: { 
 				livereload: true 
@@ -34,12 +40,14 @@ module.exports = function(grunt) {
 					'_sass/*.scss',
 					'_sass/*.sass',
 					'index.html',
+					'.md',
 					'_includes/*.html',
 					'_js/*.js',
 					'_layouts/*.html',
 					'_posts/*.md',
 					'_posts/*/*.md',
 					'_data/*','*.md',
+					'img/*',
 				],
 				tasks: ['uglify','sass','shell'],
 			},
@@ -67,12 +75,8 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-newer');
 
 	// Default task(s).
-	grunt.registerTask('default', [
-		'newer:uglify',
-		'newer:sass',
-		'shell',
-		'connect',
-		'watch'
-	]);
+	grunt.registerTask('init_build', ['bower_concat:build','uglify','sass','shell:jekyll_build'])
+	grunt.registerTask('build', ['bower_concat:build','newer:uglify','newer:sass','shell:jekyll_build'])
+	grunt.registerTask('default', ['init_build','connect','watch']);
 
 };
