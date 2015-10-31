@@ -17,3 +17,24 @@
 .limit-400
 	max-height: 400px
 	overflow-y: auto
+
+.skip
+	color: blue
+	padding: 1em
+	font-family: $sans-body
+	position: absolute
+	top: 0
+	left: -100vw
+	display: inline-block
+	&:visited
+		color: blue
+
+	&:active
+		left: 0
+	&:hover
+		left: 0
+	&:focus
+		left: 0
+
+#content:focus
+	outline: 0

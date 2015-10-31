@@ -45,15 +45,14 @@ h3,h4,h5
 
 img
 	max-width: 100%
+	width: 100vw
+	& + em
+		width: 100px
+		transform: translateX(-100px)
 
 html
 	box-sizing: border-box;
 	overflow-y: scroll
-*
-	&::selection
-		background-color: red
-	&::-moz-selection
-		background-color: red
 
 *, *:before, *:after
   box-sizing: inherit;
