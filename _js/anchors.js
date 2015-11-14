@@ -26,5 +26,5 @@ var anchors = function (parent,elems) {
 };
 
 setTimeout(function(){
-	anchors(".post");
-}, 0);
+	// anchors(".post");
+}, 10);

@@ -15,9 +15,9 @@ layout: default
 	<meta itemprop="description" content="{{ page.excerpt | strip_html }}">
 	<meta itemprop="image" content="{{ page.metaImage }}" >
 
-	<div>Published : {{ page.date | date: '%A %B %-d, %Y'}} &mdash; {{ page.date | date: '%r %Z' }}</div>
+	<div>Published : {{ page.date | date: '%A %B %-d, %Y'}} &mdash; {{ page.date | date: '%r' }}</div>
 	{% if page.edited %}
-	<div>Edited : {{ page.edited | date: '%A %B %-d, %Y' }} &mdash; {{ page.edited | date: '%r %Z' }}</div>
+	<div>Edited : {{ page.edited | date: '%A %B %-d, %Y' }} &mdash; {{ page.edited | date: '%r' }}</div>
 	{% endif %}
 	<div>
 		<ul>

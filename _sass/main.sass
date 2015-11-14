@@ -1,5 +1,5 @@
 $sans: 'Open Sans Condensed','Roboto Condensed', sans-serif
-$sans-body: 'Open Sans','Helvetica','Arial', sans-serif
+$sans-body: 'Open Sans/','Helvetica','Arial', sans-serif
 $serif: 'Noto Serif', 'Merriweather', serif
 $mono: 'Consolas','Monaco',monospace
 
@@ -19,12 +19,22 @@ $s-card: 0px 1px 10px rgba(0,0,0,0.4)
 @import '_bower.scss'
 @import _palette
 
+html
+	min-height: 100vh
+
 html,body 
 	font-size: $font-size
 	font-family: $serif
 
 .container
 	max-width: $container-width
+	display: -webkit-flex
+	display: -moz-flex
+	display: -ms-flex
+	display: -o-flex
+	display: flex
+	flex-direction: column
+	min-height: 100vh
 	padding: 0
 
 // pre, blockquote, dl, figure, table, p, ul, ol, form
@@ -66,7 +76,7 @@ a
 
 .main
 	color: #000
-	padding-left: 5px
+	flex: 1
 
 button.button,a.button
 	font-family: $sans-body
@@ -109,4 +119,4 @@ section.post
 @import _nav
 @import _layout
 @import _highlight
-
+@import _footer

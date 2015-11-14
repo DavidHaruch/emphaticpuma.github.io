@@ -19,7 +19,7 @@ title: projects
 
 	{% endif %}
 
-	<a href="{{ project.link }}" class="button button-primary">Link</a>
+	<a href="{{ project.link }}" class="button button-primary">Repo</a>
 	<a href="{{ project.site }}" class="button">site</a>
 </div>
 
