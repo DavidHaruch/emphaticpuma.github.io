@@ -1,27 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
-
-	{% include head.html %}
-	
-	<body>
-
-	<a class="skip" href="#content">Skip to Content</a>
-
-	<div class="container">
-
-		{% include header.html %}
-
-		<main class="main" id="content">
-		
-				{{ content }}
-		
-		</main>
-
-
-		{% include footer.html %}
-		
-		</div>
-
-	</body>
-
+{% include head.html %}
+<body>
+    {% include header.html %}
+    <div class="container">
+    <main class="main">
+        {{ content }}
+    </main>
+    <aside class="sidebar">
+        <section class="sidebar__section">
+            <h3 class="sidebar__title">site</h3>
+            <a href="/feed.xml">RSS Feed</a>
+            <a href="/posts">Archive</a>
+        </section>
+        <section class="sidebar__section">
+            <h3 class="sidebar__title">links</h3>
+            <a href="https://github.com/emphaticpuma">Github</a>
+            <a href="https://bitbucket.org/emphaticpuma">Bitbucket</a>
+            <a href="https://steamcommunity.com/id/emphaticpuma">Steam</a>
+        </section>
+    </aside>
+    </div>
+    {% include footer.html %}
+    {% include scripts.html %}
+</body>
 </html>

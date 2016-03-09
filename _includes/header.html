@@ -1,24 +1,23 @@
 <header class="header" id="header">
-
-<div class="row">
-	<div class="six columns">
-		<a href="/">
-			<h1>
-				Puma
-			</h1>
-		</a>
-	</div>
-	<div class="six columns">
-		<em>{{site.desc}}</em>
-	</div>
-</div>
-
-<div class="row">
-	<nav class="nav" role="navigation">
-		<ul>
-			<a href="/"><li>Home</li></a><a href="/about/"><li>About</li></a><a href="/projects/"><li>Projects</li></a><a href="/posts/"><li>Posts</li></a>
-		</ul>
-	</nav>
-</div>
-
+    <nav class="nav" role="navigation">
+        <h1 class="nav__title">
+            <a href="/">
+                Puma
+            </a>
+        </h1>
+        <ul class="nav__list">
+            <a class="nav__item" href="/">Home</a>
+            <a class="nav__item" href="/about/">About</a>
+            <a class="nav__item "href="/projects/">Projects</a>
+        </ul>
+    </nav>
+    <script>
+        var navLinks = document.querySelectorAll(".nav__item");
+        var page = location.pathname;
+        for (var i=0;i<navLinks.length;i++) {
+            if (navLinks[i].getAttribute("href") == page) {
+                navLinks[i].className = "nav__item nav__item-current";
+            }
+        }
+    </script>
 </header>

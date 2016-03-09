@@ -1,94 +1,56 @@
-.highlight pre code
-	display: block
-	white-space: pre
-	overflow-x: auto
-	word-wrap: normal
-
-p code
-	background-color: #f1f1f1
-	padding: 5px
-	border-radius: 5px
-	font-size: 16px
-	border: 1px solid #e1e1e1
-
-
 .highlight pre
-	margin: 0
-	padding-bottom: 3em
-	.lineno
-		color: #999
-		padding-right: .5em
-		user-select: none
-		-webkit-user-select: none 
-		-moz-user-select: none 
-		-ms-user-select: none 
-		-o-user-select: none 
-
-pre
-	white-space: pre
-	font-size: 11px
-	background: #F1F1F1
-	border: 1px solid #E1E1E1
-	border-radius: 4px
-	padding: 1em 2vw
-	@media(min-width:$tablet)
-		font-size: 14px
-
+    margin: 0
+    .lineno
+        color: #999
+        padding-right: .5em
+        user-select: none
+        -webkit-user-select: none 
+        -moz-user-select: none 
+        -ms-user-select: none 
+        -o-user-select: none 
 
 .highlight
-	white-space: nowrap
-	font-size: 16px
-	margin: 0
-	margin-bottom: 2.5em
-	background: #F1F1F1
-	border-radius: 4px
+  margin: 0
+
+pre
+  white-space: pre
+  font-size: 14px
+  background-color: #F1F1F1
+  border: 1px solid #E1E1E1
+  border-radius: 4px
+  padding: 1em
 
 code[data-lang]::before
-	display: block
-	border-bottom: 1px solid #d1d1d1
-	font-family: $mono
-	font-size: 1.1em
-	padding: 0.5em 0
-	margin-bottom: 1em
-	text-transform: capitalize
-	background-repeat: no-repeat
-	background-position: 100% 0%
-	background-size: auto 100%
+    display: block
+    text-align: right
+    float: right
+    text-transform: capitalize
+    color: #888
 
 #s_bgi
-	background-size: auto 90%
+    background-size: auto 90%
 #xs_bgi
-	background-size: auto 80%
+    background-size: auto 80%
 
 code[data-lang=javascript]::before
-	content: 'javascript'
-	background-image: url("/img/lang_logo/javascript.svg")
+    content: 'javascript'
 
 code[data-lang=python]::before
-	content: 'python'
-	background-image: url("/img/lang_logo/python.svg")
+    content: 'python'
 
 code[data-lang=haskell]::before
-	content: 'haskell'
-	background-image: url("/img/lang_logo/haskell.png")
+    content: 'haskell'
 
 code[data-lang=lua]::before
-	content: 'lua'
-	background-image: url("/img/lang_logo/lua.png")
-	@extend #s_bgi
+    content: 'lua'
 
 code[data-lang=java]::before
-	content: 'java'
-	background-image: url("/img/lang_logo/java.svg")
+    content: 'java'
 
 code[data-lang=php]::before
-	content: 'php'
-	background-image: url("/img/lang_logo/php.svg")
-	@extend #xs_bgi
+    content: 'php'
 
 code[data-lang=ruby]::before
-	content: 'ruby'
-	background-image: url("/img/lang_logo/ruby.svg")
-	@extend #xs_bgi
+    content: 'ruby'
 
 @import '_highlight_native.scss'

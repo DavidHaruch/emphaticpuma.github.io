@@ -4,7 +4,7 @@ desc: emphaticpuma's region of the internet
 
 url: http://emphaticpuma.github.io
 
-permalink: pretty
+permalink: /:month-:day-:year/:title.html 
 
 markdown: kramdown
 

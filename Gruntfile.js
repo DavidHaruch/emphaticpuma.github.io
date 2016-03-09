@@ -5,10 +5,12 @@ module.exports = function(grunt) {
 	grunt.initConfig({
 		pkg: grunt.file.readJSON('package.json'),
 		uglify: {
-			build: {
-				src: '_js/*.js', // input
-				dest: 'js/scripts.min.js' // output
-			}
+            build: {
+                files: {
+                    dest: 'js/scripts.js',
+                    src: '_javascript/*.js'
+                }
+            }
 		},
 		sass: {
 			options: {
@@ -54,12 +56,13 @@ module.exports = function(grunt) {
 					'index.html',
 					'.md',
 					'_includes/*.html',
-					'_js/*.js',
+					'js/*.js',
 					'_layouts/*.html',
 					'_posts/*.md',
 					'_posts/*/*.md',
 					'_data/*','*.md',
 					'img/*',
+                    '*.json'
 				],
 				tasks: ['uglify','sass','shell'],
 			},

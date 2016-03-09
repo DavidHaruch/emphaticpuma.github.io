@@ -1,6 +1,9 @@
 ---
-layout: default
 title: about
+permalink: /about/
+layout: default
 ---
 
-## About
+# About
+
+test

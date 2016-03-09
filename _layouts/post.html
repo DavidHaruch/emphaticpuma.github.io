@@ -1,41 +1,33 @@
 ---
 layout: default
 ---
-<article itemscope itemtype="http://schema.org/BlogPosting">
-	
 
-<div class="meta">
-	<div class="div">		
-		<h1 itemprop="headline">{{page.title}}</h1>
-	</div>	
-	<div class="row">
-		
-	<meta itemprop="datePublished" content="{{ page.date | date: to_xml_schema }}">
-	<meta itemprop="wordCount" content="{{ page.content | number_of_words }}">
-	<meta itemprop="description" content="{{ page.excerpt | strip_html }}">
-	<meta itemprop="image" content="{{ page.metaImage }}" >
+<h1 class="item__title">{{ page.title }}</h1>
+{{ page.date | date: '%a %d %B %Y' }}
+by
+{% if post.author %}
+<a href="/{{ post.author  }}">
+{{ post.author  }}
+</a>
+{% else %}
+<a href="/about">
+Me
+</a>
+{% endif %}
 
-	<div>Published : {{ page.date | date: '%A %B %-d, %Y'}} &mdash; {{ page.date | date: '%r' }}</div>
-	{% if page.edited %}
-	<div>Edited : {{ page.edited | date: '%A %B %-d, %Y' }} &mdash; {{ page.edited | date: '%r' }}</div>
-	{% endif %}
-	<div>
-		<ul>
-			<li><svg style="width:1em;height:1em;vertical-align:middle" viewBox="0 0 24 24"><path fill="#666" d="M5.5,7A1.5,1.5 0 0,1 4,5.5A1.5,1.5 0 0,1 5.5,4A1.5,1.5 0 0,1 7,5.5A1.5,1.5 0 0,1 5.5,7M21.41,11.58L12.41,2.58C12.05,2.22 11.55,2 11,2H4C2.89,2 2,2.89 2,4V11C2,11.55 2.22,12.05 2.59,12.41L11.58,21.41C11.95,21.77 12.45,22 13,22C13.55,22 14.05,21.77 14.41,21.41L21.41,14.41C21.78,14.05 22,13.55 22,13C22,12.44 21.77,11.94 21.41,11.58Z" /></svg><span>:</span></li>
-			{% for tag in page.tags %}
-				<li>
-				{{tag}}{% if forloop.index != forloop.length %},{% endif %}
-				</li>
-			{% endfor %}
-		</ul>
-		
-	</div>
-		
-	</div>
+
+<div class="post">
+    {{ content  }}
 </div>
 
-<section itemprop="articleBody" class="post">	
-	{{ content }}
-</section>
+{% if page.next.url or page.previous.url %}
+<div class="post__more">
+    {% if page.next.url %}
+        <a href="{{ page.next.url }}" title="{{ page.next.title  }}" class="post__more__next"><span>&larr;</span>next post</a>
+    {% endif %}
+    {% if page.previous.url %}
+        <a href="{{ page.previous.url }}" title="{{ page.previous.title }}" class="post__more__previous">previous post<span>&rarr;</span></a>
+    {% endif %}
+</div>
+{% endif %}
 
-</article>

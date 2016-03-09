@@ -7,3 +7,8 @@
   link: http://github.com/emphaticpuma/emphaticpuma.github.io
   site: http://emphaticpuma.github.io
   desc: 'This is the site you are viewing right now. It is based on jekyll, a static site generator. It is freqently resdesigned and reworked. it contains content on web development, linux, javascript, math, and anthing else that comes to mind. The source code is available on Github; you are free to use any parts in your own projects.'
+
+- name: todoList_vuejs
+  link: https://github.com/emphaticpuma/todoList_vuejs
+  site: 
+  desc: 'A todolist webapp that uses vuejs, nodejs, express, and mongodb to write and delete notes'

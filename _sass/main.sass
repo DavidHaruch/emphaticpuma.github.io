@@ -1,122 +1,266 @@
-$sans: 'Open Sans Condensed','Roboto Condensed', sans-serif
-$sans-body: 'Open Sans/','Helvetica','Arial', sans-serif
-$serif: 'Noto Serif', 'Merriweather', serif
-$mono: 'Consolas','Monaco',monospace
+$sans: "Roboto",sans-serif
+$serif: serif
+$mono: monospace
 
-$font-size: 19px
+$tablet: 760px
 
 $container-width: 1100px
 
-$mobile:     400px
-$phablet:    550px
-$tablet:     750px
-$desktop:    1000px
-$desktopHD:  1200px
-$desktopUHD: 1920px
-
-$s-card: 0px 1px 10px rgba(0,0,0,0.4)
+$primary: rgb(34,83,120)
+$link:    rgb(22,134,163)
+$accent:  rgb(235,127,0)
+$accent2: rgb(172,240,242)
+$white:   rgb(242,242,242)
 
 @import '_bower.scss'
-@import _palette
 
-html
-	min-height: 100vh
+*
+  box-sizing: border-box
 
-html,body 
-	font-size: $font-size
-	font-family: $serif
+body
+  margin: 0
+  font-family: $sans
+  font-size: 16px
+  line-height: 1.4
+  overflow-y: scroll
 
-.container
-	max-width: $container-width
-	display: -webkit-flex
-	display: -moz-flex
-	display: -ms-flex
-	display: -o-flex
-	display: flex
-	flex-direction: column
-	min-height: 100vh
-	padding: 0
+ul
+  padding: 0
+  list-style: inside
 
-// pre, blockquote, dl, figure, table, p, ul, ol, form
-// 	margin-bottom: 1.5em
-
-li
-	margin: 0
-
-h1,h2,h3,h4,h5
-	font-weight: 700
-	font-family: $sans
-	
-h1,h2,h3
-	text-transform: uppercase
-
-h3,h4,h5
-	font-family: $sans
-
-img
-	max-width: 100%
-	width: 100vw
-	& + em
-		width: 100px
-		transform: translateX(-100px)
-
-html
-	box-sizing: border-box;
-	overflow-y: scroll
-
-*, *:before, *:after
-  box-sizing: inherit;
+ul.posts
+  margin: 0
+  list-style: none
 
 a
-	color: blue
-	&:visited
-		color: purple
-	&:hover
-		cursor: pointer
+  &:visited
+    color: $link
+    text-decoration: none
+  &:link
+    color: $link
+    text-decoration: none
+    &:hover
+      text-decoration: underline
+
+
+// header/nav stuff
+
+.header
+  display: flex
+  align-items: center
+  background-image: linear-gradient(0deg,darken($primary,13%),$primary)
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25)
+  color: $white
+  margin-bottom: 4em
+  font-size: 16px
+
+.nav
+  display: flex
+  align-items: center
+  max-width: $container-width
+  width: 100%
+  margin: 0 auto
+
+.nav__title
+  margin: 0.5em 2em 0.5em 0
+  &:hover a
+    text-decoration: none
+    color: $accent2
+  a
+    text-decoration: none
+    color: #fff
+
+.nav__list
+  margin: 0
+  padding: 0
+  list-style-type: none
+  display: flex
+
+a.nav__item
+  &:not(:last-of-type)
+    margin-right: 2em
+
+  color: $white
+  text-decoration: none
+  border-bottom: 2px solid transparent
+  &:hover
+    border-bottom: 2px solid $accent2
+    text-decoration: none
+
+  &.nav__item-current
+    border-bottom: 2px solid $accent
+
+// main/body stuff
+
+.container
+  max-width: $container-width
+  margin: 0 auto
+  display: flex
+  align-items: flex-start
+  justify-content: space-between
+  margin-bottom: 4em
 
 .main
-	color: #000
-	flex: 1
+  flex-basis: 50%
 
-button.button,a.button
-	font-family: $sans-body
-	border-radius: 100vh
-	color: #000
-	&:hover
-		background-color: rgba(0,0,0,0.1)
-		color: #555
+// sidebar section
 
-button.button.button-primary,a.button.button-primary,.button.button-primary
-	background-color: $c-primary
-	border-color: $c-primary
-	&:hover,&:focus
-		background-color: lighten($c-primary,15%)
-		border-color: lighten($c-primary,15%)
+.sidebar
+  flex-basis: 15%
 
-section.post
-	h1,h2,h3,h4,h5
-		a.anchor-container
-			margin-left: 0.125em
-			i.material-icons
-				color: #000
-				opacity: .25
-				transition: all 300ms ease
-				font-size: 0.7em
-				vertical-align: middle
+.sidebar__section
+  background-color: darken($white,1%)
+  border: 2px solid darken($white,5%)
+  padding: 1.5em
+  border-radius: 4px
+  margin-bottom: 1.5em
+  a
+    display: block
+    &:not(:last-of-type)
+      margin-bottom: 0.5em
 
-.anchor-container
-	&:hover
-		color: #000 !important
-		i.material-icons
-			opacity: 0.9 !important
-			transform: rotateZ(0deg) !important
+.sidebar__title
+  font-size: 12px
+  margin: 0
+  text-transform: uppercase
+  margin-bottom: 1em
+  color: #888
 
-@import '_print.scss'
-@import _projects
-@import _post
-@import _home
-@import _header
-@import _nav
-@import _layout
+// Posts
+
+.item__title
+  margin: 0
+  font-size: 2em
+  margin-bottom: 0.125em
+  a
+    text-decoration: none
+    color: #000
+    &:hover
+      text-decoration: none
+
+.item__content,.post
+  img
+    width: 70%
+    display: block
+    margin: 0 auto 1em
+
+
+.post__item
+  margin-bottom: 4em
+
+.cl,.cf
+  clear: both
+
+.post
+  margin-bottom: 4em
+
+.post__more
+  display: flex
+  justify-content: space-between
+  a
+    padding: 0.5em 1em
+    border: 1px solid darken($white,20%)
+    border-radius: 5px
+    font-size: 1.1em
+    &:hover
+      background-color: darken($white,5%)
+      text-decoration: none
+
+.post__more__next span
+  margin-right: 0.5em
+
+.post__more__previous span
+  margin-left: 0.5em
+
+.post__list-small
+  list-style-type: none
+  margin-bottom: 0.65em
+  padding-bottom: 0.65em
+  &:not(:last-of-type)
+    border-bottom: 1px solid darken($white,5%)
+  span
+    margin-right: 2em
+  a
+
+img
+  // classes to add to image
+  &.small
+    width: 50%
+  &.x-small
+    width: 30%
+  &.fl-right
+    float: right
+    margin-left: 2em
+  &.fl-left
+    float: left
+    margin-right: 2em
+
+#index_posts_append
+  display: flex
+  flex-direction: row
+  align-items: center
+  margin-bottom: 4em
+  justify-content: space-around
+  span
+    font-style: italic
+
+#posts_more,#posts_all
+  display: flex
+  flex-direction: column
+  align-items: center
+  justify-content: center
+  padding: 1em 2em
+  border: 1px solid darken($white,20%)
+  border-radius: 5px
+  color: $link
+  font-size: 1.1em
+
+  &:hover
+    cursor: pointer
+    background-color: darken($white,5%)
+
+
 @import _highlight
-@import _footer
+
+@media (max-width: 768px)
+  .container
+    flex-direction: column
+    padding: 0 20px
+  .sidebar
+    flex-basis: 100%
+    width: 100%
+  .sidebar__section
+    width: 100%
+    margin-bottom: 0
+    &:not(:last-of-type)
+      margin-bottom: 1em
+
+  .main
+    margin-bottom: 4em
+
+  .header
+    margin-bottom: 2em
+  .nav
+    flex-direction: column
+
+  .nav__title
+    margin: 1rem 0
+
+  
+  .nav__list
+    margin-bottom: 0.5rem
+
+  #index_posts_append
+    flex-direction: column
+    align-items: stretch
+    span
+      margin: 1em 0
+      align-self: center
+
+  .highlight
+    width: 100%
+    overflow-x: scroll
+    pre
+      font-size: 11px
+      white-space: pre-wrap
+
