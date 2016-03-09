@@ -76,6 +76,13 @@
     };
     var load_button = document.getElementById('posts_more');
 
+    var liquid_post_loop = 5;
+
+    if (list.getLength() <= liquid_post_loop) {
+        list.removeButton();
+        console.log("less posts than liquid loop lim, so no need for adding")
+    }
+
     if (list.getUrlParam("posts")) {
         qwest.get('/json_posts.json').then(function(xhr,res){
             for (var i=list.getLength();i<list.getUrlParam("posts");i++) {
