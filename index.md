@@ -4,7 +4,7 @@ title: emphaticpuma.github.io
 ---
 
 <ul class="posts" id="index_posts">
-    {% for post in site.posts limit:2 %}
+    {% for post in site.posts limit:5 %}
     <li class="post__item" id="list_num_{{ forloop.index0 }}">
         <h2 class="item__title">
             <a href="{{ post.url }}">{{ post.title | capitalize }}</a>
