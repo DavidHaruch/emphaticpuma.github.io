@@ -1,10 +1,22 @@
-$sans: "Roboto",sans-serif
-$serif: serif
-$mono: monospace
-
 $tablet: 760px
 
 $container-width: 1100px
+
+$text: #000
+$alt-text: #444
+$text-light: #888
+
+$text-border: #bbb
+
+$header_lh: 1
+$body_lh: 1.4
+$small_lh: 1.2
+
+$sans: 'Roboto', 'Helvectica',sans-serif
+$mono: 'Roboto Mono', monospace
+$font_size: 17px
+$font_small: 15px
+$font_mono: 13px
 
 $primary: rgb(34,83,120)
 $link:    rgb(22,134,163)
@@ -12,35 +24,41 @@ $accent:  rgb(235,127,0)
 $accent2: rgb(172,240,242)
 $white:   rgb(242,242,242)
 
-@import '_bower.scss'
+@import 'bower.scss'
+@import 'fonts.scss'
 
-*
-  box-sizing: border-box
+// attempting to try my own SMACSS thing
+@import base
+@import modules
 
-body
-  margin: 0
-  font-family: $sans
-  font-size: 16px
-  line-height: 1.4
-  overflow-y: scroll
+// LAYOUT RULES
 
-ul
-  padding: 0
-  list-style: inside
+// basic grid thing (uses flexbox)
 
-ul.posts
-  margin: 0
-  list-style: none
+.col
+  display: flex
+  margin-bottom: 2rem
+.cr
+  flex-direction: row
+.cc
+  flex-direction: column
 
-a
-  &:visited
-    color: $link
-    text-decoration: none
-  &:link
-    color: $link
-    text-decoration: none
-    &:hover
-      text-decoration: underline
+.vc
+  align-items: center
+.vt
+  align-items: top
+.vb
+  align-items: bottom
+
+.r3
+  flex-basis: 25%
+.r9
+  flex-basis: 75%
+
+// some utility classes
+
+.m0
+  margin: 0 !important
 
 
 // header/nav stuff
@@ -51,7 +69,7 @@ a
   background-image: linear-gradient(0deg,darken($primary,13%),$primary)
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25)
   color: $white
-  margin-bottom: 4em
+  margin-bottom: 4rem
   font-size: 16px
 
 .nav
@@ -62,7 +80,7 @@ a
   margin: 0 auto
 
 .nav__title
-  margin: 0.5em 2em 0.5em 0
+  margin: 1rem 3rem 1rem 0
   &:hover a
     text-decoration: none
     color: $accent2
@@ -78,7 +96,7 @@ a
 
 a.nav__item
   &:not(:last-of-type)
-    margin-right: 2em
+    margin-right: 2rem
 
   color: $white
   text-decoration: none
@@ -98,40 +116,20 @@ a.nav__item
   display: flex
   align-items: flex-start
   justify-content: space-between
-  margin-bottom: 4em
+  margin-bottom: 4rem
 
 .main
-  flex-basis: 50%
+  flex-basis: 55%
 
-// sidebar section
+// COMPONENTS & MODULES
 
-.sidebar
-  flex-basis: 15%
-
-.sidebar__section
-  background-color: darken($white,1%)
-  border: 2px solid darken($white,5%)
-  padding: 1.5em
-  border-radius: 4px
-  margin-bottom: 1.5em
-  a
-    display: block
-    &:not(:last-of-type)
-      margin-bottom: 0.5em
-
-.sidebar__title
-  font-size: 12px
-  margin: 0
-  text-transform: uppercase
-  margin-bottom: 1em
-  color: #888
 
 // Posts
 
 .item__title
   margin: 0
   font-size: 2em
-  margin-bottom: 0.125em
+  margin-bottom: 0.25rem
   a
     text-decoration: none
     color: #000
@@ -139,11 +137,31 @@ a.nav__item
       text-decoration: none
 
 .item__content,.post
+  h1,h2,h3
+    margin-top: 3rem
   img
-    width: 70%
     display: block
-    margin: 0 auto 1em
+    margin: 0 auto
+    max-width: 100%
 
+// break long urls
+.post a, .posts a
+  word-break: break-all
+
+.post p > img + em,#index_posts p > img + em
+  display: block
+  font-size: 12px
+  font-style: italic
+  color: $alt_text
+  text-align: center
+  padding: 2px 0
+  // the last anchor tag is expected to be a view larger link
+  // TODO make a script to do this to markdown files
+  a:last-of-type
+    margin-left: 1rem
+
+.item__meta
+  margin-bottom: 1rem
 
 .post__item
   margin-bottom: 4em
@@ -178,9 +196,6 @@ a.nav__item
   padding-bottom: 0.65em
   &:not(:last-of-type)
     border-bottom: 1px solid darken($white,5%)
-  span
-    margin-right: 2em
-  a
 
 img
   // classes to add to image
@@ -195,6 +210,8 @@ img
     float: left
     margin-right: 2em
 
+// projects page css
+
 #index_posts_append
   display: flex
   flex-direction: row
@@ -204,63 +221,32 @@ img
   span
     font-style: italic
 
-#posts_more,#posts_all
+// grid
+
+.grid
+  list-style: none
   display: flex
-  flex-direction: column
   align-items: center
-  justify-content: center
-  padding: 1em 2em
-  border: 1px solid darken($white,20%)
-  border-radius: 5px
-  color: $link
-  font-size: 1.1em
+  justify-content: flex-start
 
-  &:hover
-    cursor: pointer
-    background-color: darken($white,5%)
+.grid-image img
+  display: inline-block
+  height: 2.5rem
 
+.grid-wrap
+  flex-wrap: wrap
 
-@import _highlight
+.grid__item
+  font-size: 3em
+  line-height: 1
+  font-weight: bold
+  margin: 0.5rem 0.75rem
 
-@media (max-width: 768px)
-  .container
-    flex-direction: column
-    padding: 0 20px
-  .sidebar
-    flex-basis: 100%
-    width: 100%
-  .sidebar__section
-    width: 100%
-    margin-bottom: 0
-    &:not(:last-of-type)
-      margin-bottom: 1em
+.date
+  font-family: $mono
+  font-size: 14px
+  margin-right: 2rem
 
-  .main
-    margin-bottom: 4em
-
-  .header
-    margin-bottom: 2em
-  .nav
-    flex-direction: column
-
-  .nav__title
-    margin: 1rem 0
-
-  
-  .nav__list
-    margin-bottom: 0.5rem
-
-  #index_posts_append
-    flex-direction: column
-    align-items: stretch
-    span
-      margin: 1em 0
-      align-self: center
-
-  .highlight
-    width: 100%
-    overflow-x: scroll
-    pre
-      font-size: 11px
-      white-space: pre-wrap
-
+@import highlight
+@import 'highlight_native.scss'
+@import mobile

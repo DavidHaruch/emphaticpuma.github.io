@@ -1,11 +1,10 @@
 (function(doc){
     var list = {
         // adds a post to the list with the data you give it
+        // TODO probs make this a bit better
         // @param {object} obj - object's properties are in json_posts.json
         addPost: function (obj,li_id,callback) {
-
             var post_list = document.querySelector('#index_posts');
-
             // create the li elem
             var e = document.createElement('li');
             e.className = 'post__item';
@@ -21,19 +20,35 @@
             title.appendChild(title_a);
             e.appendChild(title);
 
-            // for the date
+            // for the meta_date
             var s_d = document.createElement('span');
             s_d.className = 'item__date';
             s_d.textContent = obj.date;
-            e.appendChild(s_d);
-
-            // for the author (or not)
+            // e.appendChild(s_d);
+            
+            // for the meta_author (or not)
             var s_a = document.createElement('span');
             s_a.className = 'item__author';
             s_a.innerHTML = obj.author;
-            e.appendChild(s_a);
+            // e.appendChild(s_a);
 
-            e.innerHTML += obj.content;
+            // for the meta container
+            var meta = document.createElement('div');
+            meta.className = 'item__meta';
+
+            // tack on the sub-meta elements
+            meta.appendChild(s_d);
+            meta.appendChild(s_a);
+            e.appendChild(meta);
+
+            // for the content container
+            var d_content = document.createElement('div');
+            d_content.className = 'item__content';
+            d_content.innerHTML = obj.content;
+            e.appendChild(d_content);
+
+            // e.innerHTML += obj.content;
+            console.log(obj.content);
             post_list.appendChild(e);
             if (callback)
                 callback();
@@ -75,14 +90,8 @@
         }
     };
     var load_button = document.getElementById('posts_more');
-
-    var liquid_post_loop = 5;
-
-    if (list.getLength() <= liquid_post_loop) {
-        list.removeButton();
-        console.log("less posts than liquid loop lim, so no need for adding")
-    }
-
+    var spinner = document.getElementById('index_posts_spinner');
+    var liquid_post_loop = 2;
     if (list.getUrlParam("posts")) {
         qwest.get('/json_posts.json').then(function(xhr,res){
             for (var i=list.getLength();i<list.getUrlParam("posts");i++) {
@@ -90,19 +99,20 @@
             }
             if (list.getUrlParam("posts") == res.posts.length)
                 list.removeButton();
-
             list.scrollToPost(list.getUrlParam("posts")-1);
+            // tell mathjax to parse any added math in these posts
+            MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
         })
         .catch(function(e){
             console.log(e);
         });
-
-
     }
 
     if (load_button) {
 
     load_button.addEventListener('click', function(){
+
+        spinner.style.display = 'block';
 
         qwest.get('/json_posts.json')
         .then(function(xhr,res){
@@ -113,10 +123,13 @@
                 var state = {
                     posts_loaded: list.getLength()
                 };
-                history.replaceState(state,document.title,"?posts="+list.getLength())
+                history.replaceState(state,document.title,"?posts="+list.getLength());
+                // tell mathjax to parse any added math in this post
+                MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
                 if (list.getLength() == res.posts.length) {
                     list.removeButton();
                 }
+                spinner.style.display = 'none';
             }
         })
         .catch(function(e,xhr,res){

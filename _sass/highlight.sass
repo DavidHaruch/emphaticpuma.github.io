@@ -1,0 +1,58 @@
+.highlight pre
+  margin: 0
+  .lineno
+    color: #999
+    padding-right: .5em
+    user-select: none
+    -webkit-user-select: none
+    -moz-user-select: none
+    -ms-user-select: none
+    -o-user-select: none
+
+.highlight
+  margin: 0 1px 1rem
+
+pre,code,.highlight
+  font-family: $mono
+
+pre
+  white-space: pre
+  font-size: 14px
+  background-color: #FFF
+  border: 1px solid $text-border
+  border-radius: 4px
+  padding: 1em
+
+code[data-lang]::before
+  display: block
+  text-align: right
+  float: right
+  text-transform: capitalize
+  color: #888
+
+#s_bgi
+  background-size: auto 90%
+#xs_bgi
+  background-size: auto 80%
+
+code[data-lang=javascript]::before
+  content: 'javascript'
+
+code[data-lang=python]::before
+  content: 'python'
+
+code[data-lang=haskell]::before
+  content: 'haskell'
+
+code[data-lang=lua]::before
+  content: 'lua'
+
+code[data-lang=java]::before
+  content: 'java'
+
+code[data-lang=php]::before
+  content: 'php'
+
+code[data-lang=ruby]::before
+  content: 'ruby'
+

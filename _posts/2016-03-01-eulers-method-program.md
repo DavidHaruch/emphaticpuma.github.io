@@ -7,7 +7,7 @@ tags:
   - programming
 ---
 
-[Euler's method](https://en.wikipedia.org/wiki/Euler_method) is a numerical method to *approximate* the solution to a [differential equation](https://en.wikipedia.org/wiki/Differential_equation). It sounds complicated, but is actually a relatively simple concept.
+[Euler's method](https://en.wikipedia.org/wiki/Euler_method) is a numerical method to *approximate* the solution to a [differential equation](https://en.wikipedia.org/wiki/Differential_equation).
 
 ![Euler's method illustration from wikipedia, pictures a graph of points connected by linear segments meant to approximate the true solution](https://upload.wikimedia.org/wikipedia/commons/1/10/Euler_method.svg){: .small .fl-right}
 
@@ -39,7 +39,6 @@ $$ y_1 = y_0 + hF(x_0,y_0) $$
 
 this is repeated until you reach the end of the bound and 
 
-## The program
 
 {% highlight javascript %}
 

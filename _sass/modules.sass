@@ -1,0 +1,164 @@
+// tags
+
+.tag-collage
+  display: flex
+  flex-wrap: wrap
+
+.tag
+  background-color: $link
+  font-weight: bold
+  color: #fff
+  font-size: $font_small
+  overflow: hidden
+  line-height: 1
+  margin: 0 0.5rem 1em 0
+  display: inline-flex
+  a
+    padding: 0.5rem
+    color: inherit
+    display: block
+    &:hover
+      text-decoration: none
+
+// for the tag listing
+
+.tag-list
+  @extend .posts
+
+.tag-list__item
+  margin-bottom: 1rem
+  @extend .post__list-small
+
+.tag__title
+  margin-bottom: 0.25rem
+  position: relative
+  &:target
+    color: #000
+    text-decoration: underline
+    &::before
+      content: ">"
+      width: 16px
+      position: absolute
+      left: -16px
+      color: $accent
+
+// sidebar section
+
+.sidebar
+  flex-basis: 20%
+
+.sidebar__section
+  border: 2px solid $text-border
+  background-color: #fff
+  padding: 1.5rem
+  border-radius: 4px
+  margin-bottom: 1.5rem
+  a
+    display: block
+    &:not(:last-of-type)
+      margin-bottom: 0.5rem
+
+.sidebar__title
+  font-size: 12px
+  margin: 0
+  text-transform: uppercase
+  margin-bottom: 1rem
+  color: $text-light
+
+// buttons
+a.button,button.button,.button
+  display: flex
+  flex-direction: column
+  align-items: center
+  justify-content: center
+  padding: 1em 2em
+  border: 1px solid darken($white,20%)
+  border-radius: 5px
+  color: $link
+  font-size: 1.1em
+  &.button-small
+    font-size: 0.85em
+    padding: 0.25em 1em
+  &.button-inline
+    display: inline-flex
+
+  &:hover
+    cursor: pointer
+    background-color: darken($white,5%)
+    text-decoration: none
+
+
+//cards
+// - for lists of cards
+.card-column
+  list-style: none
+  display: flex
+  flex-direction: column
+
+.card
+  display: flex
+  flex-direction: column
+  margin-bottom: 2rem
+  width: 100%
+  box-shadow: 0px 1px 5px rgba(0,0,0,0.5)
+  border-radius: 4px
+  background-color: #fff
+
+.card__title,.card__category,.card__desc,.card__buttons
+  padding: 0 1rem
+
+.card > *:last-child
+  padding-bottom: 1.5rem
+
+.card__buttons .button-inline:not(:last-of-type)
+  margin-right: 0.5rem
+
+.card__title,.card__category
+  margin: 0
+  line-height: $header_lh
+
+.card__category
+  font-size: 14px
+  color: $text-light
+  margin-bottom: 0.25em
+  &:first-child
+    margin-top: 1.5rem
+
+.card__img
+  width: 100%
+  height: auto
+  margin-bottom: 24px
+
+.card__img-container
+  overflow: hidden
+
+// spinners and loaders
+.spinner
+  &.spinner-wave
+    display: block
+    height: 30px
+    .wave-1,.wave-2,.wave-3
+      background: $accent
+      height: 30px
+      width: 5px
+      animation: spinner-wave 500ms infinite ease
+      animation-direction: alternate
+      display: inline-block
+    .wave-1
+      margin-right: 5px
+      animation-delay: 100ms
+    .wave-2
+      animation-delay: 200ms
+    .wave-3
+      margin-left: 5px
+      animation-delay: 300ms
+
+@keyframes spinner-wave
+  from
+    transform: scaleY(0.2)
+  to
+    transform: scaleY(1)
+
+#index_posts_spinner
+  text-align: center
+  margin-bottom: 2em

@@ -1,0 +1,94 @@
+// BASE RULES
+
+*
+  box-sizing: border-box
+
+html
+  font-size: $font_size
+
+body
+  margin: 0
+  font-family: $sans
+  font-size: $font_size
+  line-height: $body_lh
+  overflow-y: scroll
+  background-color: $white
+  font-variant-ligatures: common-ligatures
+  -webkit-font-variant-ligatures: common-ligatures
+  font-feature-settings: 'liga'
+  -webkit-font-feature-settings: 'liga'
+  font-variant: none
+
+h1,h2,h3,h4,h5,h6
+  line-height: $header_lh
+  margin-top: 0
+  margin-bottom: 1.2rem
+
+p
+  margin: 0
+  margin-bottom: 1.2rem
+
+code
+  border: 1px solid #bbb
+  background-color: #fff
+  border-radius: 4px
+  font-size: $font_mono
+  padding: 2px 6px
+  margin: 0 2px
+  white-space: nowrap
+
+pre > code
+  border: none
+  background-color: #fff
+  font-size: inherit
+  margin: 0
+  padding: 0
+  white-space: inherit
+
+ul,ol
+  padding: 0
+  margin-left: 0
+  list-style: disc inside
+  margin-bottom: 1.5rem
+
+// nested lists
+li > ul, li > ol
+  margin-left: 1.5em
+  margin-bottom: 0
+
+// tables
+
+th
+  text-align: left
+
+td
+  padding-right: 1rem
+
+blockquote
+  margin: 1.5rem 0
+  padding: 0 0 0 1.5rem
+  border-left: 0.5rem solid $alt-text
+  line-height: $small_lh
+  font-size: $font_small
+  color: $alt-text
+
+table
+  margin-bottom: 1rem
+
+ol
+  list-style: decimal inside
+
+ul.posts
+  margin: 0
+  list-style: none
+
+a
+  &:visited
+    color: $link
+    text-decoration: none
+  &:link
+    color: $link
+    text-decoration: none
+    &:hover
+      text-decoration: underline
+

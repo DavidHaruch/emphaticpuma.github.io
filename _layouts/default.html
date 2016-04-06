@@ -18,6 +18,22 @@
             <a href="https://github.com/emphaticpuma">Github</a>
             <a href="https://bitbucket.org/emphaticpuma">Bitbucket</a>
             <a href="https://steamcommunity.com/id/emphaticpuma">Steam</a>
+            <a href="http://www.last.fm/user/emphaticpuma">Last.fm</a>
+        </section>
+        <section class="sidebar__section">
+            <h3 class="sidebar__title">Tags</h3>
+            <div class="sidebar__tags tag-collage">
+                {% for tag in site.tags %}
+
+                {% capture tag_link %}/tags/#{{ tag | first }}{% endcapture %}
+
+                <span class="tag">
+                    <a href="{{ tag_link }}">
+                    {{ tag | first }}
+                </a>
+                </span>
+                {% endfor %}
+            </div>
         </section>
     </aside>
     </div>

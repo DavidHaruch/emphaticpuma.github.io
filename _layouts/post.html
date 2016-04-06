@@ -3,17 +3,19 @@ layout: default
 ---
 
 <h1 class="item__title">{{ page.title }}</h1>
-{{ page.date | date: '%a %d %B %Y' }}
-by
-{% if post.author %}
-<a href="/{{ post.author  }}">
-{{ post.author  }}
-</a>
-{% else %}
-<a href="/about">
-Me
-</a>
-{% endif %}
+<div class="item__meta">
+    {{ page.date | date: '%a %d %B %Y' }}
+    by
+    {% if post.author %}
+    <a href="/{{ post.author  }}">
+    {{ post.author  }}
+    </a>
+    {% else %}
+    <a href="/about">
+    Me
+    </a>
+    {% endif %}
+</div>
 
 
 <div class="post">
